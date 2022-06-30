@@ -81,7 +81,11 @@ body{
 }
 
 .link-presentation{
-    .link-options-opener{
+    .link-options-opener,
+    .link-options .link-options-closer{
+        position: absolute;
+        width: 40px;
+        height: 40px;
         margin: 25px;
         padding: 10px;
         background-color: #fff;
@@ -89,13 +93,31 @@ body{
         border-radius: 50%;
         box-shadow: 0 0 5px #444;
         cursor: pointer;
-        transition: transform .3s;
+        transition: transform .3s, opacity .1s;
         .fa-solid{
             font-size: 2rem;
             color: #222;
         }
         &:hover{
             transform: scale(1.1);
+        }
+    }
+    .link-options-opener--active{
+        opacity: 0;    
+    }
+    .link-options{
+        margin: 1em;
+        height: 500px;
+        width: calc(100% - 2em);
+        background-color:#eee;
+        box-shadow:  0 0 5px #444;
+        transform: translate(-100vw);
+        transition: transform .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        &-closer{
+            right: 0;
+        }
+        &--active{
+            transform: translate(0);
         }
     }
 }
@@ -126,7 +148,7 @@ body{
     .menu{
         .links-variation-box{
             &__link{
-                width:calc(33% - 1em)
+                width:calc(33.3% - 1em)
             }
         }
     }
@@ -136,7 +158,6 @@ body{
     .menu{
         .links-variation-box{
             &__link{
-                margin: 0em .5em;
                 width:calc(25% - 1em)
             }
         }
@@ -147,7 +168,6 @@ body{
     .menu{
         .links-variation-box{
             &__link{
-                margin: 0em .5em;
                 width:calc(20% - 1em)
             }
         }
@@ -158,8 +178,7 @@ body{
     .menu{
         .links-variation-box{
             &__link{
-                margin: 0em .5em;
-                width:calc(16.5% - 1em)
+                width:calc(16.6% - 1em)
             }
         }
     }

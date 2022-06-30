@@ -1,6 +1,10 @@
 const links = document.querySelectorAll('.links-box__link');
 const linksVariationBox = document.querySelectorAll('.links-variation-box__element')
 const linksVariation = document.querySelectorAll('.links-variation-box__link')
+const optionsOpener = document.querySelector('.link-options-opener')
+const optionsCloser = document.querySelector('.link-options-closer')
+const optionsFrame = document.querySelector('.link-options')
+
 
 const linkHandle = (e) =>{
     links.forEach(link => {
@@ -31,6 +35,17 @@ const linkVariationHandle = (e) => {
     e.target.classList.add('links-variation-box__link--active')
 }
 
+const openOptions = () =>{
+    optionsFrame.classList.add('link-options--active')
+    optionsOpener.classList.add('link-options-opener--active')
+}
+
+const closeOptions = () =>{
+    optionsFrame.classList.remove('link-options--active')
+    optionsOpener.classList.remove('link-options-opener--active')
+}
+
+
 links.forEach(link => {
     link.addEventListener('click', linkHandle)
 })
@@ -38,3 +53,6 @@ links.forEach(link => {
 linksVariation.forEach(link => {
     link.addEventListener('click', linkVariationHandle)
 })
+
+optionsOpener.addEventListener('click', openOptions)
+optionsCloser.addEventListener('click', closeOptions)
