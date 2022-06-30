@@ -152,6 +152,16 @@ body{
             }
         }
     }
+    .link-presentation{
+        .link-options-opener,
+        .link-options .link-options-closer{
+            display: none;
+        }
+        .link-options{
+            width: 275px;
+            transform: translate(0);
+        }
+    }
 }
 
 @media (min-width: 992px) {
