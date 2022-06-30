@@ -21,12 +21,12 @@ const linkHandle = (e) =>{
             linksVariationBox[i].classList.add('links-variation-box__element--active')
             linksVariation.forEach(link => {
                 link.classList.remove('links-variation-box__link--active')
-
             })
             linksVariationBox[i].firstElementChild.classList.add('links-variation-box__link--active')
+            stageLink.removeAttribute('class')
+            stageLink.classList.add(linksVariationBox[i].firstElementChild.classList[1])
         }
     }
-    
 }
 
 const linkVariationHandle = (e) => {
