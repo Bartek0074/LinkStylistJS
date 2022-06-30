@@ -1,3 +1,5 @@
+@import 'linkClasses.scss';
+
 *,
 *::after,
 *::before{
@@ -10,7 +12,7 @@ html{
 }
 body{
     font-size: 1.6rem;
-    background-color: #dbdbdb;
+    background-color: $bgc-color;
     font-family: 'Gantari', sans-serif;}
 
 .menu{
@@ -36,7 +38,7 @@ body{
             cursor: pointer;
             transition: background-color .3s;
             &--active{
-                background-color: rgb(220, 73, 47);
+                background-color: $main-color;
             }
             &:hover{
                 background-color: #444;
@@ -68,7 +70,7 @@ body{
             cursor: pointer;
             transition: color .3s, background-color .3s;
             &--active{
-                background-color: rgb(220, 73, 47);
+                background-color: $main-color;
                 color: #eee;
             }
             &:hover{
@@ -134,7 +136,6 @@ body{
         top: 0;
         bottom: 0;
         width: calc(100% - 2em);
-        background-color: rgba(73, 38, 38,0.2);
         &__element{
             text-transform: uppercase;
         }
