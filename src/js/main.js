@@ -4,6 +4,7 @@ const linksVariation = document.querySelectorAll('.links-variation-box__link')
 const optionsOpener = document.querySelector('.link-options-opener')
 const optionsCloser = document.querySelector('.link-options-closer')
 const optionsFrame = document.querySelector('.link-options')
+const stageLink = document.querySelector('.link-stage__element')
 
 
 const linkHandle = (e) =>{
@@ -25,6 +26,7 @@ const linkHandle = (e) =>{
             linksVariationBox[i].firstElementChild.classList.add('links-variation-box__link--active')
         }
     }
+    
 }
 
 const linkVariationHandle = (e) => {
@@ -33,6 +35,9 @@ const linkVariationHandle = (e) => {
     })
 
     e.target.classList.add('links-variation-box__link--active')
+
+    stageLink.removeAttribute('class')
+    stageLink.classList.add(e.target.classList[1])
 }
 
 const openOptions = () =>{
