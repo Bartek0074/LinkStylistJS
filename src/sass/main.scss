@@ -110,15 +110,49 @@ body{
     .link-options-opener--active{
         opacity: 0;    
     }
+    .link-options .link-options-closer{
+        margin: 0 25px 0 0;    
+    }
     .link-options{
         z-index: 1;
         margin: 1em;
+        padding: 1.25em 1em;
         height: 500px;
         width: calc(100% - 2em);
         background-color:#eee;
+        color: #444;
         box-shadow:  0 0 5px #444;
         transform: translate(-100vw);
         transition: transform .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        h2{
+            margin-bottom: 1.25em;
+            color: black;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        &__element{
+            display: flex;
+            justify-content: space-between;
+            label{
+                font-size: 1.6rem;
+            }
+            &-inputs{
+                &-text{
+                    margin-right: 10px;
+                    width: 100px;
+                    transform: translateY(-5px);
+                }
+                &-color{
+                    appearance: none;
+                    height: 100%;
+                    width: 20px;
+                    border: none;
+                    border-radius: 15px;
+                    cursor: pointer;
+                } 
+            }
+        }
         &-closer{
             right: 0;
         }
@@ -162,6 +196,20 @@ body{
             }
         }
     }
+    .link-presentation{
+        .link-options-opener,
+        .link-options .link-options-closer{
+            display: none;
+        }
+        .link-options{
+            width: 300px;
+            transform: translate(0);
+        }
+        .link-stage{
+            left: calc(275px + 1em);
+            width: calc(100% - 3em - 275px);
+        }
+    }
 }
 
 @media (min-width: 776px) {
@@ -170,20 +218,6 @@ body{
             &__link{
                 width:calc(33.3% - 1em)
             }
-        }
-    }
-    .link-presentation{
-        .link-options-opener,
-        .link-options .link-options-closer{
-            display: none;
-        }
-        .link-options{
-            width: 275px;
-            transform: translate(0);
-        }
-        .link-stage{
-            left: calc(275px + 1em);
-            width: calc(100% - 3em - 275px);
         }
     }
 }

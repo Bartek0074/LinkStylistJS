@@ -5,7 +5,8 @@ const optionsOpener = document.querySelector('.link-options-opener')
 const optionsCloser = document.querySelector('.link-options-closer')
 const optionsFrame = document.querySelector('.link-options')
 const stageLink = document.querySelector('.link-stage__element')
-
+const bgcInputText = document.querySelector('.link-options__element-inputs-text')
+const bgcInputColor = document.querySelector('.link-options__element-inputs-color')
 
 const linkHandle = (e) =>{
     // REMOVING ACTIVE CLASS FROM ALL LINK BOXES
@@ -53,16 +54,21 @@ const linkVariationHandle = (e) => {
     stageLink.classList.add(e.target.classList[1])
 }
 
-const openOptions = () =>{
+const openOptions = () => {
     optionsFrame.classList.add('link-options--active')
     optionsOpener.classList.add('link-options-opener--active')
 }
 
-const closeOptions = () =>{
+const closeOptions = () => {
     optionsFrame.classList.remove('link-options--active')
     optionsOpener.classList.remove('link-options-opener--active')
 }
 
+// BACKGROUND COLOR OPTION
+const backgroundImageHandle = () => {
+    document.body.style.backgroundColor = bgcInputText.value
+    bgcInputColor.value = bgcInputText.value
+}
 
 links.forEach(link => {
     link.addEventListener('click', linkHandle)
@@ -74,3 +80,5 @@ linksVariation.forEach(link => {
 
 optionsOpener.addEventListener('click', openOptions)
 optionsCloser.addEventListener('click', closeOptions)
+
+bgcInputText.addEventListener('keyup', backgroundImageHandle)
