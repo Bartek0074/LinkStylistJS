@@ -65,9 +65,19 @@ const closeOptions = () => {
 }
 
 // BACKGROUND COLOR OPTION
-const backgroundImageHandle = () => {
-    document.body.style.backgroundColor = bgcInputText.value
-    bgcInputColor.value = bgcInputText.value
+const backgroundColorInputTextHandle = () => {
+    if (bgcInputText.value.length===7){
+        document.body.style.backgroundColor = bgcInputText.value
+        bgcInputColor.value = bgcInputText.value
+    }
+    else{
+        document.body.style.backgroundColor = '#dbdbdb'
+        bgcInputColor.value = '#dbdbdb'
+    }
+}
+const backgroundColorInputColorHandle = () => {
+    document.body.style.backgroundColor = bgcInputColor.value
+    bgcInputText.value = bgcInputColor.value
 }
 
 links.forEach(link => {
@@ -81,4 +91,5 @@ linksVariation.forEach(link => {
 optionsOpener.addEventListener('click', openOptions)
 optionsCloser.addEventListener('click', closeOptions)
 
-bgcInputText.addEventListener('keyup', backgroundImageHandle)
+bgcInputText.addEventListener('keyup', backgroundColorInputTextHandle)
+bgcInputColor.addEventListener('change', backgroundColorInputColorHandle)
