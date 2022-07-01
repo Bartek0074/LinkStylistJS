@@ -125,31 +125,52 @@ body{
         transform: translate(-100vw);
         transition: transform .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
         h2{
-            margin-bottom: 1.25em;
+            margin-bottom: 1em;
             color: black;
-            font-size: 2rem;
+            font-size: 1.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         &__element{
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            margin: 1em 0;
             label{
-                font-size: 1.6rem;
+                font-size: 1.4rem;
             }
             &-inputs{
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
                 &-text{
-                    margin-right: 10px;
-                    width: 100px;
-                    transform: translateY(-5px);
-                }
-                &-color{
-                    appearance: none;
-                    height: 100%;
-                    width: 20px;
+                    background-color: #dbdbdb;
+                    width: 75%;
+                    padding: 0.25em;
+                    outline: none;
                     border: none;
-                    border-radius: 15px;
-                    cursor: pointer;
+                    border-radius: 3px;
+                    font-size: 1.6rem;
+                    &:focus{
+                        background-color: #c9c9c9;
+                    }
+                }
+                &-color-div{
+                    height: 27px;
+                    width: 27px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    box-shadow: 0 0 5px #777;
+                    transition: box-shadow .3s;
+                    &:hover{
+                        box-shadow: 0 0 5px #444;
+                    }
+                    .link-options__element-inputs-color{
+                        height: 27px;
+                        width: 27px;
+                        transform:scale(1.1);
+                        border: none;
+                        cursor: pointer;
+                    }
                 } 
             }
         }
@@ -202,7 +223,7 @@ body{
             display: none;
         }
         .link-options{
-            width: 300px;
+            width: 250px;
             transform: translate(0);
         }
         .link-stage{
