@@ -5,8 +5,10 @@ const optionsOpener = document.querySelector('.link-options-opener')
 const optionsCloser = document.querySelector('.link-options-closer')
 const optionsFrame = document.querySelector('.link-options')
 const stageLink = document.querySelector('.link-stage__element')
-const bgcInputText = document.querySelector('.link-options__element-inputs-text')
-const bgcInputColor = document.querySelector('.link-options__element-inputs-color')
+const bgcInputText = document.querySelector('.bgc-input-text')
+const bgcInputColor = document.querySelector('.bgc-input-color')
+const fontColorInputText = document.querySelector('.font-input-text')
+const fontColorInputColor = document.querySelector('.font-input-color')
 
 const linkHandle = (e) =>{
     // REMOVING ACTIVE CLASS FROM ALL LINK BOXES
@@ -64,7 +66,7 @@ const closeOptions = () => {
     optionsOpener.classList.remove('link-options-opener--active')
 }
 
-// BACKGROUND COLOR OPTION
+// BACKGROUND COLOR OPTION - TEXT INPUT
 const backgroundColorInputTextHandle = () => {
     if (bgcInputText.value.length===7){
         document.body.style.backgroundColor = bgcInputText.value
@@ -75,10 +77,31 @@ const backgroundColorInputTextHandle = () => {
         bgcInputColor.value = '#dbdbdb'
     }
 }
+// BACKGROUND COLOR OPTION - COLOR INPUT
 const backgroundColorInputColorHandle = () => {
     document.body.style.backgroundColor = bgcInputColor.value
     bgcInputText.value = bgcInputColor.value
 }
+
+// BACKGROUND COLOR OPTION - TEXT INPUT
+const fontColorInputTextHandle = () => {
+    if (bgcInputText.value.length===7){
+        stageLink.style.color = fontColorInputText.value
+        fontColorInputColor.value = fontColorInputText.value
+    }
+    else{
+        document.body.style.color = '#000000'
+        fontColorInputColor.value = '#000000'
+    }
+}
+// BACKGROUND COLOR OPTION - COLOR INPUT
+const fontColorInputColorHandle = () => {
+    stageLink.style.color = fontColorInputColor.value
+    fontColorInputText.value = fontColorInputColor.value
+}
+
+
+
 
 links.forEach(link => {
     link.addEventListener('click', linkHandle)
@@ -93,3 +116,6 @@ optionsCloser.addEventListener('click', closeOptions)
 
 bgcInputText.addEventListener('keyup', backgroundColorInputTextHandle)
 bgcInputColor.addEventListener('change', backgroundColorInputColorHandle)
+
+fontColorInputText.addEventListener('keyup', fontColorInputTextHandle)
+fontColorInputColor.addEventListener('change', fontColorInputColorHandle)
