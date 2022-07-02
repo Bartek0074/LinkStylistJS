@@ -3,6 +3,7 @@
 /*  */
 :root{
     --font-size: 32px;
+    --font-family: 'Times New Roman', Times, serif;
     --font-weight: normal;
     --font-style: normal;
     --bgc-color: #dbdbdb;
@@ -18,10 +19,11 @@
 .link-presentation .link-stage a {
     position: relative;
     text-decoration: none;
-    color: var(--font-color);
+    font-family: var(--font-family);
     font-size: var(--font-size);
     font-weight: var(--font-weight);
     font-style: var(--font-style);
+    color: var(--font-color);
     cursor: pointer;
 }
   

@@ -8,6 +8,7 @@ const stageLink = document.querySelector('.link-stage__element')
 const root = document.querySelector(':root')
 const textInput = document.querySelector('.text-input')
 const fontSizeInput = document.querySelector('.font-size-input')
+const fontFamilyInput = document.querySelector('#font-family')
 const fontWeightInput = document.querySelector('.font-weight-input')
 const fontStyleInput = document.querySelector('.font-style-input')
 const bgcInputText = document.querySelector('.bgc-input-text')
@@ -77,6 +78,39 @@ const closeOptions = () => {
 const textHandle = () =>(
     stageLink.innerHTML = textInput.value
 )
+
+// FONT FAMILY OPTION
+const fontFamilyInputHandle = () =>{
+    console.log(fontFamilyInput.value)
+    switch(fontFamilyInput.value) {
+        case 'Times New Roman':
+            root.style.setProperty('--font-family', "'Times New Roman', Times, serif") 
+            break;
+        case 'Arial':
+            root.style.setProperty('--font-family', "Arial, Helvetica, sans-serif") 
+            break;
+        case 'Courier New':
+            root.style.setProperty('--font-family', "'Courier New', Courier, monospace") 
+            break;
+        case 'Cambria':
+            root.style.setProperty('--font-family', "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif") 
+            break;
+        case 'Verdana':
+            root.style.setProperty('--font-family', "Verdana, Geneva, Tahoma, sans-serif") 
+            break;
+        case 'Georgia':
+            root.style.setProperty('--font-family', "Georgia, 'Times New Roman', Times, serif") 
+            break;
+        case 'Gill Sans':
+            root.style.setProperty('--font-family', "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif") 
+            break;
+        case 'Lucida Sans':
+            root.style.setProperty('--font-family', "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif") 
+            break;
+        default:
+          // code block
+      }
+}
 
 // FONT SIZE OPTION
 const fontSizeInputHandle = () =>{
@@ -171,6 +205,8 @@ linksVariation.forEach(link => {
 })
 
 textInput.addEventListener('keyup', textHandle)
+
+fontFamilyInput.addEventListener('change', fontFamilyInputHandle)
 
 fontSizeInput.addEventListener('change', fontSizeInputHandle)
 

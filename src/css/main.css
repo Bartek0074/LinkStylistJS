@@ -178,6 +178,20 @@ body {
   font-size: 1.4rem;
 }
 
+.link-presentation .link-options__element select {
+  background-color: #dbdbdb;
+  width: 100%;
+  padding: 0.25em 0.5em;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.6rem;
+}
+
+.link-presentation .link-options__element select:focus{
+  background-color: #c9c9c9;
+}
+
 .link-presentation .link-options__element-inputs {
   display: flex;
   justify-content: space-between;
