@@ -15,10 +15,12 @@ const reload = browserSync.reload;
 const paths = {
     html: './html/**/*.kit',
     sass: './src/sass/**/*.scss',
+    css: './src/css/**/*.css',
     js: './src/js/**/*.js',
     img: './src/img/*',
     dist: './dist',
     sassDest: './dist/css',
+    cssDest: './dist/css',
     jsDest: './dist/js',
     imgDest: './dist/img',
 }
@@ -32,6 +34,17 @@ function sassCompiler(done) {
         .pipe(rename({ suffix: '.min' }))
         .pipe(sourcemaps.write())
         .pipe(dest(paths.sassDest));
+    done()
+}
+
+function cssMinifier(done) {
+    src(paths.css)
+        .pipe(sourcemaps.init())
+        .pipe(autoprefixer())
+        .pipe(cssnano())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(sourcemaps.write())
+        .pipe(dest(paths.cssDest));
     done()
 }
 
@@ -78,12 +91,12 @@ function startBrowserSync(done) {
 
 function watchForChanges(done) {
     watch('./*.html').on("change", reload);
-    watch([paths.html, paths.sass, paths.js], parallel(handleKits, sassCompiler, javaScript)).on("change", reload);
+    watch([paths.html, paths.css, paths.js], parallel(handleKits, cssMinifier, javaScript)).on("change", reload);
     watch(paths.img, convertImages).on("change", reload);
     done()
 }
 
 
-const mainFunctions = parallel(handleKits, sassCompiler, javaScript, convertImages)
+const mainFunctions = parallel(handleKits, cssMinifier, javaScript, convertImages)
 exports.cleanStuff = cleanStuff
 exports.default = series(mainFunctions, startBrowserSync, watchForChanges)

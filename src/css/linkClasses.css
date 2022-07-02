@@ -1,0 +1,324 @@
+/*  */
+/* VARIABLES */
+/*  */
+:root{
+    --bgc-color: #dbdbdb;
+    --main-color: #1363df;
+    --font-color: black;
+    --font-size: 32px;
+    --underline-size: 3px
+}
+
+/*  */
+/* BASIC STYLES */
+/*  */
+
+.link-presentation .link-stage a {
+    position: relative;
+    text-decoration: none;
+    color: var(--font-color);
+    font-size: var(--font-size);
+    cursor: pointer;
+}
+  
+.link-presentation .link-stage a,
+.link-presentation .link-stage a::before,
+.link-presentation .link-stage a::after {
+    transition: .3s;
+}
+  
+/*  */
+/* SIMPLE HOVER */
+/*  */
+    
+/* HOVER FIRST */
+.link-presentation .link-stage .hover__first:hover {
+    color: var(--main-color);
+}
+
+/* HOVER SECOND */
+.link-presentation .link-stage .hover__second {
+    border-bottom: var(--underline-size) solid transparent;
+}
+.link-presentation .link-stage .hover__second:hover {
+    color: var(--main-color);
+    border-bottom-color: var(--main-color);
+}
+
+/*  */
+/* UNDERLINE */
+/*  */
+
+/* UNDERLINE FIRST */
+.link-presentation .link-stage .underline__first {
+    border-bottom: var(--underline-size) solid transparent;
+} 
+.link-presentation .link-stage .underline__first:hover {
+    border-bottom-color: var(--main-color);
+}
+
+/* UNDERLINE SECOND */
+.link-presentation .link-stage .underline__second::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform: scaleX(0);
+    height: var(--underline-size);
+    background-color: var(--main-color);
+}  
+.link-presentation .link-stage .underline__second:hover:before {
+    transform: scaleX(1);
+}
+ 
+/* UNDERLINE THIRD */
+.link-presentation .link-stage .underline__third::before,
+.link-presentation .link-stage .underline__third::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: var(--underline-size);
+    width: 50%;
+    transform: scaleX(0);
+    background-color: var(--main-color);
+    transition: transform .3s;
+}  
+.link-presentation .link-stage .underline__third::before {
+    left: 0;
+    transform-origin: left;
+}
+.link-presentation .link-stage .underline__third::after {
+    right: 0;
+    transform-origin: right;
+}
+.link-presentation .link-stage .underline__third:hover::before {
+    transform: scaleX(1);
+    transform-origin: right;
+} 
+.link-presentation .link-stage .underline__third:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+ 
+/* UNDERLINE FOURTH */
+.link-presentation .link-stage .underline__fourth::before,
+.link-presentation .link-stage .underline__fourth::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: var(--underline-size);
+    width: 50%;
+    transform: scaleX(0);
+    background-color: var(--main-color);
+    transition: transform .3s;
+}
+.link-presentation .link-stage .underline__fourth::before {
+    left: 0;
+    transform-origin: right;
+}  
+.link-presentation .link-stage .underline__fourth::after {
+    right: 0;
+    transform-origin: left;
+}
+.link-presentation .link-stage .underline__fourth:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}  
+.link-presentation .link-stage .underline__fourth:hover::after {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+  
+/* UNDERLINE FIFTH */
+.link-presentation .link-stage .underline__fifth::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    height: var(--underline-size);
+    background-color: var(--main-color);
+} 
+.link-presentation .link-stage .underline__fifth:hover::before {
+    transform: scaleX(1);
+}
+
+/* UNDERLINE SIXTH */
+.link-presentation .link-stage .underline__sixth::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    height: var(--underline-size);
+    background-color: var(--main-color);
+    transition: transform .3s ease-in;
+}
+.link-presentation .link-stage .underline__sixth:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+  
+/*  */
+/* BACKGROUND */
+/*  */
+
+/* BACKGROUND FIRST */
+.link-presentation .link-stage .background__first {
+    padding: 10px 20px;
+}
+.link-presentation .link-stage .background__first:hover {
+    background-color: var(--main-color);
+    color: var(--bgc-color);
+}
+
+/* BACKGROUND SECOND */
+.link-presentation .link-stage .background__second {
+    padding: 10px 20px;
+    z-index: 0;
+} 
+.link-presentation .link-stage .background__second::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: scaleY(0);
+    background-color: var(--main-color);
+    z-index: -1;
+} 
+.link-presentation .link-stage .background__second:hover::before {
+    transform: scaleY(1);
+}
+.link-presentation .link-stage .background__second:hover {
+    color: var(--bgc-color);
+}
+
+/* BACKGROUND THIRD */
+.link-presentation .link-stage .background__third {
+    padding: 10px 20px;
+    z-index: 0;
+}
+.link-presentation .link-stage .background__third::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    background-color: var(--main-color);
+    z-index: -1;
+}
+.link-presentation .link-stage .background__third:hover::before {
+    transform: scaleY(1);
+}
+.link-presentation .link-stage .background__third:hover {
+    color: var(--bgc-color);
+}
+ 
+/* BACKGROUND FOURTH */
+.link-presentation .link-stage .background__fourth {
+    padding: 10px 20px;
+    z-index: 0;
+}
+.link-presentation .link-stage .background__fourth::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    background-color: var(--main-color);
+    z-index: -1;
+    transition: transform .3s;
+} 
+.link-presentation .link-stage .background__fourth:hover::before {
+    transform-origin: bottom;
+    transform: scaleY(1);
+} 
+.link-presentation .link-stage .background__fourth:hover {
+    color: var(--bgc-color);
+}
+
+/* BACKGROUND FIFTH */
+.link-presentation .link-stage .background__fifth {
+    padding: 10px 20px;
+    z-index: 0;
+} 
+.link-presentation .link-stage .background__fifth::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: scaleX(0);
+    background-color: var(--main-color);
+    z-index: -1;
+}
+.link-presentation .link-stage .background__fifth:hover::before {
+        transform: scaleX(1);
+}
+.link-presentation .link-stage .background__fifth:hover {
+    color: var(--bgc-color);
+}
+
+/* BACKGROUND SIXTH */
+.link-presentation .link-stage .background__sixth {
+    padding: 10px 20px;
+    z-index: 0;
+} 
+.link-presentation .link-stage .background__sixth::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-color: var(--main-color);
+    z-index: -1;
+}
+.link-presentation .link-stage .background__sixth:hover::before {
+    transform: scaleX(1);
+}
+.link-presentation .link-stage .background__sixth:hover {
+    color: var(--bgc-color);
+}
+
+/* BACKGROUND SEVENTH */
+.link-presentation .link-stage .background__seventh {
+    padding: 10px 20px;
+    z-index: 0;
+} 
+.link-presentation .link-stage .background__seventh::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    background-color: var(--main-color);
+    z-index: -1;
+    transition: transform .3s;
+}
+.link-presentation .link-stage .background__seventh:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+} 
+.link-presentation .link-stage .background__seventh:hover {
+    color: var(--bgc-color);
+}
