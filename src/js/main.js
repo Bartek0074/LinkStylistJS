@@ -7,6 +7,7 @@ const optionsFrame = document.querySelector('.link-options')
 const stageLink = document.querySelector('.link-stage__element')
 const root = document.querySelector(':root')
 const textInput = document.querySelector('.text-input')
+const fontSizeInput = document.querySelector('.font-size-input')
 const bgcInputText = document.querySelector('.bgc-input-text')
 const bgcInputColor = document.querySelector('.bgc-input-color')
 const fontColorInputText = document.querySelector('.font-color-input-text')
@@ -71,10 +72,16 @@ const closeOptions = () => {
 }
 
 // TEXT VALUE OPTION
-
 const textHandle = () =>(
     stageLink.innerHTML = textInput.value
 )
+
+// FONT SIZE OPTION
+const fontSizeInputHandle = () =>{
+    if(fontSizeInput.value >= 8  && fontSizeInput.value <= 42){
+        root.style.setProperty('--font-size',`${fontSizeInput.value}px`) 
+    }
+}
 
 // BACKGROUND COLOR OPTION - TEXT INPUT
 const backgroundColorInputTextHandle = () => {
@@ -100,7 +107,6 @@ const backgroundColorInputColorHandle = () => {
 const fontColorInputTextHandle = () => {
     if (fontColorInputText.value.length===7){
         root.style.setProperty('--font-color', fontColorInputText.value)
-        console.log('sd') 
         fontColorInputColor.value = fontColorInputText.value
     }
     else{
@@ -143,6 +149,8 @@ linksVariation.forEach(link => {
 })
 
 textInput.addEventListener('keyup', textHandle)
+
+fontSizeInput.addEventListener('change', fontSizeInputHandle)
 
 optionsOpener.addEventListener('click', openOptions)
 optionsCloser.addEventListener('click', closeOptions)

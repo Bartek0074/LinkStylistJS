@@ -46,7 +46,7 @@
         <button class="link-options-opener">
             <i class="fa-solid fa-gear"></i>
         </button>
-        <div class="link-options">
+        <form class="link-options">
             <button class="link-options-closer">
                 <i class="fa-solid fa-xmark"></i>
             </button>
@@ -55,6 +55,12 @@
                 <label for="text">text</label>
                 <div class="link-options__element-inputs">
                     <input type="text" value="Link" maxlength="24" class="link-options__element-inputs-text text-input" id="text"> 
+                </div>
+            </div>
+            <div class="link-options__element">
+                <label for="font-size">font-size</label>
+                <div class="link-options__element-inputs">
+                    <input type="number" min="8" max="36" class="link-options__element-inputs-text font-size-input" id="font-size"> 
                 </div>
             </div>
             <div class="link-options__element">
@@ -87,7 +93,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
         <div class="link-stage">
             <a class="link-stage__element hover__first">Link</a>
         </div>
