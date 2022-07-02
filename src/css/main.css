@@ -99,6 +99,7 @@ body {
   flex-direction: row;
 }
 
+.link-presentation .generator-opener,
 .link-presentation .link-options-opener,
 .link-presentation .link-options .link-options-closer {
   position: absolute;
@@ -115,12 +116,21 @@ body {
   transition: transform .3s, opacity .1s;
 }
 
+.generator-opener{
+  right: 0;
+}
+
+.link-presentation .generator-opener .fa-solid{
+  font-size: 1.6rem;
+  color: #222;
+}
 .link-presentation .link-options-opener .fa-solid,
 .link-presentation .link-options .link-options-closer .fa-solid {
   font-size: 2rem;
   color: #222;
 }
 
+.link-presentation .generator-opener:hover,
 .link-presentation .link-options-opener:hover,
 .link-presentation .link-options .link-options-closer:hover {
   transform: scale(1.1);
