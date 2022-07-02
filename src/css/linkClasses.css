@@ -2,10 +2,12 @@
 /* VARIABLES */
 /*  */
 :root{
+    --font-size: 32px;
+    --font-weight: normal;
+    --font-style: normal;
     --bgc-color: #dbdbdb;
     --main-color: #1363df;
     --font-color: black;
-    --font-size: 32px;
     --underline-size: 3px
 }
 
@@ -18,6 +20,8 @@
     text-decoration: none;
     color: var(--font-color);
     font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    font-style: var(--font-style);
     cursor: pointer;
 }
   

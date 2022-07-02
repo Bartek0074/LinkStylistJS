@@ -162,6 +162,18 @@ body {
   margin: .5em 0;
 }
 
+.link-presentation .link-options__element-checkbox {
+  justify-content: center;
+  align-items: center;
+  margin-left: .75em;
+}
+
+.link-presentation .link-options__elements {
+  display: flex;
+  flex-direction: row;
+  margin: .5em 0;
+}
+
 .link-presentation .link-options__element label {
   font-size: 1.4rem;
 }
@@ -182,7 +194,8 @@ body {
   font-size: 1.6rem;
 }
 
-.link-presentation .text-input{
+.link-presentation .text-input,
+.link-presentation .font-size-input{
   width: 100%;
 }
 

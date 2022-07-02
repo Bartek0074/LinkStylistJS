@@ -8,6 +8,8 @@ const stageLink = document.querySelector('.link-stage__element')
 const root = document.querySelector(':root')
 const textInput = document.querySelector('.text-input')
 const fontSizeInput = document.querySelector('.font-size-input')
+const fontWeightInput = document.querySelector('.font-weight-input')
+const fontStyleInput = document.querySelector('.font-style-input')
 const bgcInputText = document.querySelector('.bgc-input-text')
 const bgcInputColor = document.querySelector('.bgc-input-color')
 const fontColorInputText = document.querySelector('.font-color-input-text')
@@ -83,6 +85,26 @@ const fontSizeInputHandle = () =>{
     }
 }
 
+// FONT WEIGHT OPTION
+const fontWeightInputHandle = () => {
+    if (fontWeightInput.checked === true){
+        root.style.setProperty('--font-weight', 'bold')
+    }
+    else {
+        root.style.setProperty('--font-weight', 'normal')
+    }
+}
+
+// FONT STYLE OPTION
+const fontStyleInputHandle = () => {
+    if (fontStyleInput.checked === true){
+        root.style.setProperty('--font-style', 'italic')
+    }
+    else {
+        root.style.setProperty('--font-style', 'normal')
+    }
+}
+
 // BACKGROUND COLOR OPTION - TEXT INPUT
 const backgroundColorInputTextHandle = () => {
     if (bgcInputText.value.length===7){
@@ -151,6 +173,10 @@ linksVariation.forEach(link => {
 textInput.addEventListener('keyup', textHandle)
 
 fontSizeInput.addEventListener('change', fontSizeInputHandle)
+
+fontWeightInput.addEventListener('click', fontWeightInputHandle)
+
+fontStyleInput.addEventListener('click', fontStyleInputHandle)
 
 optionsOpener.addEventListener('click', openOptions)
 optionsCloser.addEventListener('click', closeOptions)
