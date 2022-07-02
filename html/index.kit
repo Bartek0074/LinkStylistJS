@@ -52,7 +52,13 @@
             </button>
             <h2>options</h2>
             <div class="link-options__element">
-                <label for="bgc-color">background color</label>
+                <label for="text">text</label>
+                <div class="link-options__element-inputs">
+                    <input type="text" value="Link" maxlength="24" class="link-options__element-inputs-text text-input" id="text"> 
+                </div>
+            </div>
+            <div class="link-options__element">
+                <label for="bgc-color">background-color</label>
                 <div class="link-options__element-inputs">
                     <input type="text" value="#dbdbdb" maxlength="7" class="link-options__element-inputs-text bgc-input-text"> 
                     <div class="link-options__element-inputs-color-div">
@@ -62,12 +68,22 @@
                 </div>
             </div>
             <div class="link-options__element">
-                <label for="font-color">font color</label>
+                <label for="font-color">font-color</label>
                 <div class="link-options__element-inputs">
-                    <input type="text" value="#000000" maxlength="7" class="link-options__element-inputs-text font-input-text"> 
+                    <input type="text" value="#000000" maxlength="7" class="link-options__element-inputs-text font-color-input-text"> 
                     <div class="link-options__element-inputs-color-div">
                         <input type="color" value="#000000" 
-                        class="link-options__element-inputs-color font-input-color" id="font-color">
+                        class="link-options__element-inputs-color font-color-input-color" id="font-color">
+                    </div>
+                </div>
+            </div>
+            <div class="link-options__element">
+                <label for="main-color">main-color</label>
+                <div class="link-options__element-inputs">
+                    <input type="text" value="#1363df" maxlength="7" class="link-options__element-inputs-text main-color-input-text"> 
+                    <div class="link-options__element-inputs-color-div">
+                        <input type="color" value="#1363df" 
+                        class="link-options__element-inputs-color main-color-input-color" id="main-color">
                     </div>
                 </div>
             </div>

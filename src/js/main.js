@@ -5,10 +5,14 @@ const optionsOpener = document.querySelector('.link-options-opener')
 const optionsCloser = document.querySelector('.link-options-closer')
 const optionsFrame = document.querySelector('.link-options')
 const stageLink = document.querySelector('.link-stage__element')
+const root = document.querySelector(':root')
+const textInput = document.querySelector('.text-input')
 const bgcInputText = document.querySelector('.bgc-input-text')
 const bgcInputColor = document.querySelector('.bgc-input-color')
-const fontColorInputText = document.querySelector('.font-input-text')
-const fontColorInputColor = document.querySelector('.font-input-color')
+const fontColorInputText = document.querySelector('.font-color-input-text')
+const fontColorInputColor = document.querySelector('.font-color-input-color')
+const mainColorInputText = document.querySelector('.main-color-input-text')
+const mainColorInputColor = document.querySelector('.main-color-input-color')
 
 const linkHandle = (e) =>{
     // REMOVING ACTIVE CLASS FROM ALL LINK BOXES
@@ -66,38 +70,65 @@ const closeOptions = () => {
     optionsOpener.classList.remove('link-options-opener--active')
 }
 
+// TEXT VALUE OPTION
+
+const textHandle = () =>(
+    stageLink.innerHTML = textInput.value
+)
+
 // BACKGROUND COLOR OPTION - TEXT INPUT
 const backgroundColorInputTextHandle = () => {
     if (bgcInputText.value.length===7){
+        root.style.setProperty('--bgc-color', bgcInputText.value) 
         document.body.style.backgroundColor = bgcInputText.value
         bgcInputColor.value = bgcInputText.value
     }
     else{
+        root.style.setProperty('--bgc-color', '#dbdbdb') 
         document.body.style.backgroundColor = '#dbdbdb'
         bgcInputColor.value = '#dbdbdb'
     }
 }
 // BACKGROUND COLOR OPTION - COLOR INPUT
 const backgroundColorInputColorHandle = () => {
+    root.style.setProperty('--bgc-color', bgcInputColor.value) 
     document.body.style.backgroundColor = bgcInputColor.value
     bgcInputText.value = bgcInputColor.value
 }
 
-// BACKGROUND COLOR OPTION - TEXT INPUT
+// FONT COLOR OPTION - TEXT INPUT
 const fontColorInputTextHandle = () => {
-    if (bgcInputText.value.length===7){
-        stageLink.style.color = fontColorInputText.value
+    if (fontColorInputText.value.length===7){
+        root.style.setProperty('--font-color', fontColorInputText.value)
+        console.log('sd') 
         fontColorInputColor.value = fontColorInputText.value
     }
     else{
-        document.body.style.color = '#000000'
+        root.style.setProperty('--font-color', '#000000') 
         fontColorInputColor.value = '#000000'
     }
 }
-// BACKGROUND COLOR OPTION - COLOR INPUT
+// FONT COLOR OPTION - COLOR INPUT
 const fontColorInputColorHandle = () => {
-    stageLink.style.color = fontColorInputColor.value
+    root.style.setProperty('--font-color', fontColorInputColor.value)
     fontColorInputText.value = fontColorInputColor.value
+}
+
+// MAIN COLOR OPTION - TEXT INPUT
+const mainColorInputTextHandle = () => {
+    if (mainColorInputText.value.length===7){
+        root.style.setProperty('--main-color', mainColorInputText.value)
+        mainColorInputColor.value = mainColorInputText.value
+    }
+    else{
+        root.style.setProperty('--main-color', '#1363df') 
+        mainColorInputColor.value = '#1363df'
+    }
+}
+// MAIN COLOR OPTION - COLOR INPUT
+const mainColorInputColorHandle = () => {
+    root.style.setProperty('--main-color', mainColorInputColor.value)
+    mainColorInputText.value = mainColorInputColor.value
 }
 
 
@@ -111,6 +142,8 @@ linksVariation.forEach(link => {
     link.addEventListener('click', linkVariationHandle)
 })
 
+textInput.addEventListener('keyup', textHandle)
+
 optionsOpener.addEventListener('click', openOptions)
 optionsCloser.addEventListener('click', closeOptions)
 
@@ -119,3 +152,6 @@ bgcInputColor.addEventListener('change', backgroundColorInputColorHandle)
 
 fontColorInputText.addEventListener('keyup', fontColorInputTextHandle)
 fontColorInputColor.addEventListener('change', fontColorInputColorHandle)
+
+mainColorInputText.addEventListener('keyup', mainColorInputTextHandle)
+mainColorInputColor.addEventListener('change', mainColorInputColorHandle)
