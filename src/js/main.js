@@ -4,6 +4,9 @@ const linksVariation = document.querySelectorAll('.links-variation-box__link')
 const optionsOpener = document.querySelector('.link-options-opener')
 const optionsCloser = document.querySelector('.link-options-closer')
 const optionsFrame = document.querySelector('.link-options')
+const generatorOpener = document.querySelector('.generator-opener')
+const generatorCloser = document.querySelector('.generator-closer')
+const generateCodeFrame = document.querySelector('.generator-frame')
 const stageLink = document.querySelector('.link-stage__element')
 const root = document.querySelector(':root')
 const textInput = document.querySelector('.text-input')
@@ -74,6 +77,16 @@ const openOptions = () => {
 const closeOptions = () => {
     optionsFrame.classList.remove('link-options--active')
     optionsOpener.classList.remove('link-options-opener--active')
+}
+
+const openGenerateCode = () => {
+    generateCodeFrame.classList.add('generator-frame--active')
+    generatorOpener.classList.add('.generator-opener--active')
+}
+
+const closeGenerateCode = () => {
+    generateCodeFrame.classList.remove('generator-frame--active')
+    generatorOpener.classList.remove('.generator-opener--active')
 }
 
 // TEXT VALUE OPTION
@@ -234,6 +247,9 @@ fontSizeInput.addEventListener('change', fontSizeInputHandle)
 fontWeightInput.addEventListener('click', fontWeightInputHandle)
 
 fontStyleInput.addEventListener('click', fontStyleInputHandle)
+
+generatorOpener.addEventListener('click', openGenerateCode)
+generatorCloser.addEventListener('click', closeGenerateCode)
 
 optionsOpener.addEventListener('click', openOptions)
 optionsCloser.addEventListener('click', closeOptions)
