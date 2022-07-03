@@ -13,132 +13,121 @@
 </head>
 <body>
     <div class="menu">
-        <div class="links-box">
-            <button class="links-box__link links-box__link--active">simple hover</button>
-            <button class="links-box__link">underline</button>
-            <button class="links-box__link">background</button>
+        <div class="link-type-box">
+            <button class="link-type link-type--active">simple hover</button>
+            <button class="link-type">underline</button>
+            <button class="link-type">background</button>
         </div>
-        <div class="links-variation-box">
-            <div class="links-variation-box__element links-variation-box__element--active">
-                <button class="links-variation-box__link hover__first links-variation-box__link--active">simple hover</button>
-                <button class="links-variation-box__link hover__second">simple hover & underline</button>
+        <div class="link-variation-boxes">
+            <div class="link-variation-box link-variation-box--active">
+                <button class="link-variation hover__first link-variation--active">simple hover</button>
+                <button class="link-variation hover__second">simple hover & underline</button>
             </div>
-            <div class="links-variation-box__element">
-                <button class="links-variation-box__link underline__first">hover</button>
-                <button class="links-variation-box__link underline__second">center-to-sides</button>
-                <button class="links-variation-box__link underline__third">center-to-sides-reverse-return</button>
-                <button class="links-variation-box__link underline__fourth">sides-to-center</button>
-                <button class="links-variation-box__link underline__fifth">left-to-right</button>
-                <button class="links-variation-box__link underline__sixth">left-to-right-reverse-return</button>
+            <div class="link-variation-box">
+                <button class="link-variation underline__first">hover</button>
+                <button class="link-variation underline__second">center-to-sides</button>
+                <button class="link-variation underline__third">center-to-sides-reverse-return</button>
+                <button class="link-variation underline__fourth">sides-to-center</button>
+                <button class="link-variation underline__fifth">left-to-right</button>
+                <button class="link-variation underline__sixth">left-to-right-reverse-return</button>
             </div>
-            <div class="links-variation-box__element">
-                <button class="links-variation-box__link background__first">hover</button>
-                <button class="links-variation-box__link background__second">from-center-vertical</button>
-                <button class="links-variation-box__link background__third">bottom-to-top</button>
-                <button class="links-variation-box__link background__fourth">bottom-to-top-reverse-return</button>
-                <button class="links-variation-box__link background__fifth">center-to-sides</button>
-                <button class="links-variation-box__link background__sixth">left-to-right</button>
-                <button class="links-variation-box__link background__seventh">left-to-right-reverse-return</button>
+            <div class="link-variation-box">
+                <button class="link-variation background__first">hover</button>
+                <button class="link-variation background__second">from-center-vertical</button>
+                <button class="link-variation background__third">bottom-to-top</button>
+                <button class="link-variation background__fourth">bottom-to-top-reverse-return</button>
+                <button class="link-variation background__fifth">center-to-sides</button>
+                <button class="link-variation background__sixth">left-to-right</button>
+                <button class="link-variation background__seventh">left-to-right-reverse-return</button>
             </div>
         </div>
     </div>
-    <div class="link-presentation">
-        <button title="Generate code. Function is not supported yet" class="generator-opener">
+
+    <div class="workspace">
+        <button class="generator-opener" title="Generate code. Function is not supported yet">
             <i class="fa-solid fa-code"></i>
         </button>
-        <button class="link-options-opener">
+        <button class="options-opener">
             <i class="fa-solid fa-gear"></i>
         </button>
-        <div class="generator-frame">
+        <div class="generator">
             <button class="generator-closer">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <p>Here will be code ready to copy!</p>
         </div>
-        <form class="link-options">
-            <button class="link-options-closer">
+        <form class="options">
+            <button class="options-closer">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <h2>options</h2>
-            <div class="link-options__element">
+            <div class="options-element">
                 <label for="text">text</label>
-                <div class="link-options__element-inputs">
-                    <input type="text" value="Link" maxlength="24" class="link-options__element-inputs-text text-input" id="text"> 
-                </div>
+                <input type="text" value="Link" maxlength="24" class="input-text" id="text"> 
             </div>
-            <div class="link-options__element">
+            <div class="options-element">
                 <label for="font-family">font-family</label>
-                <div class="link-options__element-inputs">
-                    <select id="font-family">
-                        <option value="Times New Roman">Times New Roman</option>
-                        <option value="Arial">Arial</option>
-                        <option value="Courier New">Courier New</option>
-                        <option value="Cambria">Cambria</option>
-                        <option value="Verdana">Verdana</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Gill Sans">Gill Sans</option>
-                        <option value="Lucida Sans">Lucida Sans</option>
-                    </select>
-                </div>
+                <select id="font-family">
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Cambria">Cambria</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Gill Sans">Gill Sans</option>
+                    <option value="Lucida Sans">Lucida Sans</option>
+                </select>
             </div>
-            <div class="link-options__elements">
-                <div class="link-options__element">
+            <div class="options-elements">
+                <div class="options-element">
                     <label for="font-size">font-size</label>
-                    <div class="link-options__element-inputs">
-                        <input type="number" value="32" min="8" max="42" class="link-options__element-inputs-text font-size-input" id="font-size">
-                    </div>
+                    <input type="number" value="32" min="8" max="42" class="input-number" id="font-size">
                 </div>
-                <div class="link-options__element link-options__element-checkbox">
+                <div class="options-element options-element-checkbox">
                     <label for="font-weight">bold</label>
-                    <div class="link-options__element-inputs">
-                        <input type="checkbox" class="link-options__element-inputs-checkbox font-weight-input" id="font-weight">
-                    </div>
+                    <input type="checkbox" id="font-weight">
                 </div>
-                <div class="link-options__element link-options__element-checkbox">
+                <div class="options-element options-element-checkbox">
                     <label for="font-style">italic</label>
-                    <div class="link-options__element-inputs">
-                        <input type="checkbox" class="link-options__element-inputs-checkbox font-style-input" id="font-style">
-                    </div>
+                    <input type="checkbox" id="font-style">
                 </div>
             </div>
-            <div class="link-options__element">
+            <div class="options-element">
                 <label for="bgc-color">background-color</label>
-                <div class="link-options__element-inputs">
-                    <input type="text" value="#dbdbdb" maxlength="7" class="link-options__element-inputs-text bgc-input-text"> 
-                    <div class="link-options__element-inputs-color-div">
+                <div class="inputs">
+                    <input type="text" value="#dbdbdb" maxlength="7" class="input-text bgc-input-text"> 
+                    <div class="input-color-div">
                         <input type="color" value="#dbdbdb" 
-                        class="link-options__element-inputs-color bgc-input-color" id="bgc-color">
+                        class="input-color" id="bgc-color">
                     </div>
                 </div>
             </div>
-            <div class="link-options__element">
+            <div class="options-element">
                 <label for="font-color">font-color</label>
-                <div class="link-options__element-inputs">
-                    <input type="text" value="#000000" maxlength="7" class="link-options__element-inputs-text font-color-input-text"> 
-                    <div class="link-options__element-inputs-color-div">
+                <div class="inputs">
+                    <input type="text" value="#000000" maxlength="7" class="input-text font-color-input-text"> 
+                    <div class="input-color-div">
                         <input type="color" value="#000000" 
-                        class="link-options__element-inputs-color font-color-input-color" id="font-color">
+                        class="input-color" id="font-color">
                     </div>
                 </div>
             </div>
-            <div class="link-options__element">
+            <div class="options-element">
                 <label for="main-color">main-color</label>
-                <div class="link-options__element-inputs">
-                    <input type="text" value="#1363df" maxlength="7" class="link-options__element-inputs-text main-color-input-text"> 
-                    <div class="link-options__element-inputs-color-div">
+                <div class="inputs">
+                    <input type="text" value="#1363df" maxlength="7" class="input-text main-color-input-text"> 
+                    <div class="input-color-div">
                         <input type="color" value="#1363df" 
-                        class="link-options__element-inputs-color main-color-input-color" id="main-color">
+                        class="input-color" id="main-color">
                     </div>
                 </div>
             </div>
-            <div class="link-options__elements">
-                <div class="link-options__element">
+            <div class="options-elements">
+                <div class="options-element">
                     <label for="underline-height">underline-height</label>
-                    <div class="link-options__element-inputs">
-                        <input type="number" value="3" min="1" max="10" class="link-options__element-inputs-text underline-height-input" id="underline-height">
-                    </div>
+                    <input type="number" value="3" min="1" max="10" class="input-text" id="underline-height">
                 </div>
-                <div class="link-options__element link-options__element-reset">
+                <div class="options-element options-element-reset">
                     <input type="reset" value="RESET" class="reset-input">
                 </div>     
             </div>

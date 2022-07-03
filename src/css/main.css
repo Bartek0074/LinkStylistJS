@@ -17,11 +17,13 @@ body {
   overflow: hidden;
 }
 
+/* MENU */
+
 .menu {
   box-shadow: 0px 0px 5px black;
 }
 
-.menu .links-box {
+.menu .link-type-box {
   display: flex;
   flex-direction: row;
   background-color: #eee;
@@ -30,7 +32,7 @@ body {
   
 }
 
-.menu .links-box__link {
+.menu .link-type-box .link-type {
   margin: 0.5em .25em;
   padding: .75em 1.5em;
   font-size: 1.2rem;
@@ -46,32 +48,29 @@ body {
   -webkit-transition: background-color .3s;
   transition: background-color .3s;
 }
-
-.menu .links-box__link--active {
+.menu .link-type-box .link-type--active {
   background-color: #1363df;
 }
-
-.menu .links-box__link:hover {
+.menu .link-type-box .link-type:hover {
   background-color: #444;
 }
 
-.menu .links-variation-box {
+.menu .link-variation-boxes {
   background-color: #eee;
 }
 
-.menu .links-variation-box .links-variation-box__element {
+.menu .link-variation-boxes .link-variation-box {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   display: none;
   padding: .25em;
 }
-
-.menu .links-variation-box .links-variation-box__element--active {
+.menu .link-variation-boxes .link-variation-box--active {
   display: flex;
 }
 
-.menu .links-variation-box__link {
+.menu .link-variation-boxes .link-variation-box .link-variation {
   padding: .4em .8em;
   margin: .25em;
   font-size: 1.4rem;
@@ -83,27 +82,27 @@ body {
   cursor: pointer;
   transition: color .3s, background-color .3s;
 }
-
-.menu .links-variation-box__link--active {
+.menu .link-variation-boxes .link-variation-box .link-variation--active {
   background-color: #1363df;
   color: #eee;
 }
-
-.menu .links-variation-box__link:hover {
+.menu .link-variation-boxes .link-variation-box .link-variation:hover {
   background-color: #444;
   color: #eee;
 }
 
-.link-presentation {
+/* WORKSPACE */
+
+.workspace {
   position: relative;
   display: flex;
   flex-direction: row;
 }
 
-.link-presentation .generator-opener,
-.generator-frame .generator-closer,
-.link-presentation .link-options-opener,
-.link-presentation .link-options .link-options-closer {
+.workspace .generator-opener,
+.workspace .generator .generator-closer,
+.workspace .options-opener,
+.workspace .options .options-closer {
   position: absolute;
   z-index: 1;
   width: 40px;
@@ -117,48 +116,39 @@ body {
   cursor: pointer;
   transition: transform .3s, opacity .1s;
 }
-
-.generator-opener{
+.workspace .generator-opener{
   right: 0;
 }
-
-.link-presentation .generator-opener .fa-solid{
-  font-size: 1.6rem;
-  color: #222;
-}
-.generator-frame .generator-closer .fa-solid,
-.link-presentation .link-options-opener .fa-solid,
-.link-presentation .link-options .link-options-closer .fa-solid {
-  font-size: 2rem;
-  color: #222;
+.workspace .generator .generator-closer,
+.workspace .options .options-closer{
+  right: 0;
+  margin: 0 25px 0 0;
 }
 
-.generator-frame .generator-closer:hover,
-.link-presentation .generator-opener:hover,
-.link-presentation .link-options-opener:hover,
-.link-presentation .link-options .link-options-closer:hover {
+.workspace .generator .generator-closer:hover,
+.workspace .generator-opener:hover,
+.workspace .options-opener:hover,
+.workspace .options .options-closer:hover {
   transform: scale(1.1);
 }
 
-.generator-frame .generator-closer{
-  right: 0;
-  margin: 0 25px 0 0;
-}
-
-.link-presentation .link-options-opener--active {
+.workspace .options-opener--active,
+.workspace .generator-opener--active {
   opacity: 0;
 }
 
-.link-presentation .generator-opener--active {
-  opacity: 0;
+.workspace .generator .generator-closer .fa-solid,
+.workspace .options-opener .fa-solid,
+.workspace .options .options-closer .fa-solid {
+  font-size: 2rem;
+  color: #222;
+}
+.workspace .generator-opener .fa-solid{
+  font-size: 1.6rem;
+  color: #222;
 }
 
-.link-presentation .link-options .link-options-closer {
-  right: 0;
-  margin: 0 25px 0 0;
-}
-
-.link-presentation .generator-frame{
+.workspace .generator{
   position: absolute;
   z-index: 2;
   height: 600px;
@@ -171,12 +161,11 @@ body {
   transform: translate(100vw);
   transition: transform .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
-
-.link-presentation .generator-frame--active{
+.workspace .generator--active{
   transform: translate(0);
 }
 
-.link-presentation .link-options {
+.workspace .options {
   z-index: 1;
   margin: 1em;
   padding: 1.25em 1em;
@@ -187,8 +176,11 @@ body {
   transform: translate(-100vw);
   transition: transform .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
+.workspace .options--active {
+  transform: translate(0);
+}
 
-.link-presentation .link-options h2 {
+.workspace .options h2 {
   margin-bottom: 1em;
   color: black;
   font-size: 1.8rem;
@@ -196,25 +188,40 @@ body {
   letter-spacing: 1px;
 }
 
-.link-presentation .link-options__element {
+.workspace .options .options-elements {
+  display: flex;
+  flex-direction: row;
+  margin: .5em 0;
+}
+
+.workspace .options .options-element {
   display: flex;
   flex-direction: column;
   margin: .5em 0;
 }
 
-.link-presentation .link-options__element-checkbox {
+.workspace .options .options-element select {
+  background-color: #dbdbdb;
+  width: 100%;
+  padding: 0.25em 0.5em;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.6rem;
+}
+
+.workspace .options .options-element-checkbox {
   justify-content: center;
   align-items: center;
   margin-left: .75em;
 }
 
-.link-presentation .link-options__element-reset{
+.workspace .options .options-element-reset{
   display: flex;
   height: 27px;
   transform: translateY(17px);
 }
-
-.link-presentation .link-options__element-reset .reset-input{
+.workspace .options .options-element-reset .reset-input{
   height: 100%;
   width: 75px;
   padding: 0 .5em;
@@ -227,44 +234,29 @@ body {
   cursor: pointer;
   transition: background-color .3s;
 }
-
-.link-presentation .link-options__element-reset .reset-input:hover{
+.workspace .options .options-element-reset .reset-input:hover{
   background-color: #c9c9c9;
 }
 
-.link-presentation .link-options__elements {
-  display: flex;
-  flex-direction: row;
-  margin: .5em 0;
-}
 
-.link-presentation .link-options__element label {
+.workspace .options .options-element label {
   font-size: 1.4rem;
 }
 
-.link-presentation .link-options__element select {
-  background-color: #dbdbdb;
-  width: 100%;
-  padding: 0.25em 0.5em;
-  outline: none;
-  border: none;
-  border-radius: 3px;
-  font-size: 1.6rem;
-}
-
-.link-presentation .link-options__element select:focus{
+.workspace .options .options-element select:focus{
   background-color: #c9c9c9;
 }
 
-.link-presentation .link-options__element-inputs {
+.workspace .inputs {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
 }
 
-.link-presentation .link-options__element-inputs-text {
+.workspace .input-text,
+.workspace .input-number {
   background-color: #dbdbdb;
-  width: 75%;
+  width: 100%;
   padding: 0.25em 0.5em;
   outline: none;
   border: none;
@@ -272,17 +264,12 @@ body {
   font-size: 1.6rem;
 }
 
-.link-presentation .underline-height-input,
-.link-presentation .text-input,
-.link-presentation .font-size-input{
-  width: 100%;
-}
-
-.link-presentation .link-options__element-inputs-text:focus {
+.workspace .input-text:focus,
+.workspace .input-number:focus{
   background-color: #c9c9c9;
 }
 
-.link-presentation .link-options__element-inputs-color-div {
+.workspace .input-color-div {
   height: 27px;
   width: 27px;
   border-radius: 50%;
@@ -291,11 +278,11 @@ body {
   transition: box-shadow .3s;
 }
 
-.link-presentation .link-options__element-inputs-color-div:hover {
+.workspace .input-color-div:hover {
   box-shadow: 0 0 5px #444;
 }
 
-.link-presentation .link-options__element-inputs-color-div .link-options__element-inputs-color {
+.workspace .input-color-div .input-color {
   height: 27px;
   width: 27px;
   transform: scale(2);
@@ -303,11 +290,7 @@ body {
   cursor: pointer;
 }
 
-.link-presentation .link-options--active {
-  transform: translate(0);
-}
-
-.link-presentation .link-stage {
+.workspace .link-stage {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -319,6 +302,6 @@ body {
   width: calc(100% - 2em);
 }
 
-/* .link-presentation .link-stage__element {
+/* .workspace .link-stage__element {
   text-transform: uppercase;
 } */

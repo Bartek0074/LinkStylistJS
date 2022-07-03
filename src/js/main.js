@@ -1,50 +1,50 @@
-const links = document.querySelectorAll('.links-box__link');
-const linksVariationBox = document.querySelectorAll('.links-variation-box__element')
-const linksVariation = document.querySelectorAll('.links-variation-box__link')
-const optionsOpener = document.querySelector('.link-options-opener')
-const optionsCloser = document.querySelector('.link-options-closer')
-const optionsFrame = document.querySelector('.link-options')
+const links = document.querySelectorAll('.link-type');
+const linksVariationBox = document.querySelectorAll('.link-variation-box')
+const linksVariation = document.querySelectorAll('.link-variation')
+const optionsOpener = document.querySelector('.options-opener')
+const optionsCloser = document.querySelector('.options-closer')
+const optionsFrame = document.querySelector('.options')
 const generatorOpener = document.querySelector('.generator-opener')
 const generatorCloser = document.querySelector('.generator-closer')
-const generateCodeFrame = document.querySelector('.generator-frame')
+const generateCodeFrame = document.querySelector('.generator')
 const stageLink = document.querySelector('.link-stage__element')
 const root = document.querySelector(':root')
-const textInput = document.querySelector('.text-input')
-const fontSizeInput = document.querySelector('.font-size-input')
+const textInput = document.querySelector('#text')
+const fontSizeInput = document.querySelector('#font-size')
 const fontFamilyInput = document.querySelector('#font-family')
-const fontWeightInput = document.querySelector('.font-weight-input')
-const fontStyleInput = document.querySelector('.font-style-input')
+const fontWeightInput = document.querySelector('#font-weight')
+const fontStyleInput = document.querySelector('#font-style')
 const bgcInputText = document.querySelector('.bgc-input-text')
-const bgcInputColor = document.querySelector('.bgc-input-color')
+const bgcInputColor = document.querySelector('#bgc-color')
 const fontColorInputText = document.querySelector('.font-color-input-text')
-const fontColorInputColor = document.querySelector('.font-color-input-color')
+const fontColorInputColor = document.querySelector('#font-color')
 const mainColorInputText = document.querySelector('.main-color-input-text')
-const mainColorInputColor = document.querySelector('.main-color-input-color')
-const underlineHeightInput = document.querySelector('.underline-height-input')
+const mainColorInputColor = document.querySelector('#main-color')
+const underlineHeightInput = document.querySelector('#underline-height')
 const resetInput = document.querySelector('.reset-input')
 
 const linkHandle = (e) =>{
     // REMOVING ACTIVE CLASS FROM ALL LINK BOXES
     links.forEach(link => {
-        link.classList.remove('links-box__link--active');
+        link.classList.remove('link-type--active');
     })
     // ADDING ACTIVE CLASS TO CLICKED LINK BOX
-    e.target.classList.add('links-box__link--active')
+    e.target.classList.add('link-type--active')
 
     // REMOVING ACTIVE CLASS FROM ALL LINK VARIATION BOXES
     linksVariationBox.forEach(link => {
-        link.classList.remove('links-variation-box__element--active')
+        link.classList.remove('link-variation-box--active')
     })
     for(let i = 0; i < links.length; i++){
-        if(links[i].classList.contains('links-box__link--active')){
+        if(links[i].classList.contains('link-type--active')){
             // ADDING ACTIVE CLASS TO CLICKED LINK VARIATION BOX
-            linksVariationBox[i].classList.add('links-variation-box__element--active')
+            linksVariationBox[i].classList.add('link-variation-box--active')
             // REMOVING ACTIVE CLASS FROM ALL VARIATION ELEMENTS
             linksVariation.forEach(link => {
-                link.classList.remove('links-variation-box__link--active')
+                link.classList.remove('link-variation--active')
             })
             // ADDING ACTIVE CLASS TO LINK VARIATION ELEMENTS WHICH ARE INSIDE CLICKED LINK BOX
-            linksVariationBox[i].firstElementChild.classList.add('links-variation-box__link--active')
+            linksVariationBox[i].firstElementChild.classList.add('link-variation--active')
 
             // REMOVING ALL CLASSES FROM STAGE LINK
             stageLink.removeAttribute('class')
@@ -57,11 +57,11 @@ const linkHandle = (e) =>{
 const linkVariationHandle = (e) => {
     // REMOVING ACTIVE CLASS FROM ALL VARIATION ELEMENTS
     linksVariation.forEach(link => {
-        link.classList.remove('links-variation-box__link--active')
+        link.classList.remove('link-variation--active')
     })
 
     // ADDING ACTIVE CLASS TO CLICKED VARIATION ELEMENT
-    e.target.classList.add('links-variation-box__link--active')
+    e.target.classList.add('link-variation--active')
 
     // REMOVING ALL CLASSES FROM STAGE LINK
     stageLink.removeAttribute('class')
@@ -70,22 +70,22 @@ const linkVariationHandle = (e) => {
 }
 
 const openOptions = () => {
-    optionsFrame.classList.add('link-options--active')
-    optionsOpener.classList.add('link-options-opener--active')
+    optionsFrame.classList.add('options--active')
+    optionsOpener.classList.add('options-opener--active')
 }
 
 const closeOptions = () => {
-    optionsFrame.classList.remove('link-options--active')
-    optionsOpener.classList.remove('link-options-opener--active')
+    optionsFrame.classList.remove('options--active')
+    optionsOpener.classList.remove('options-opener--active')
 }
 
 const openGenerateCode = () => {
-    generateCodeFrame.classList.add('generator-frame--active')
+    generateCodeFrame.classList.add('generator--active')
     generatorOpener.classList.add('.generator-opener--active')
 }
 
 const closeGenerateCode = () => {
-    generateCodeFrame.classList.remove('generator-frame--active')
+    generateCodeFrame.classList.remove('generator--active')
     generatorOpener.classList.remove('.generator-opener--active')
 }
 
