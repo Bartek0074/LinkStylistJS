@@ -148,7 +148,6 @@ body {
   z-index: 1;
   margin: 1em;
   padding: 1.25em 1em;
-  height: 500px;
   width: calc(100% - 2em);
   background-color: #eee;
   color: #444;
@@ -176,6 +175,30 @@ body {
   justify-content: center;
   align-items: center;
   margin-left: .75em;
+}
+
+.link-presentation .link-options__element-reset{
+  display: flex;
+  height: 27px;
+  transform: translateY(17px);
+}
+
+.link-presentation .link-options__element-reset .reset-input{
+  height: 100%;
+  width: 75px;
+  padding: 0 .5em;
+  font-size: 1.7rem;
+  border-radius: 5px;
+  margin-left: .75em;
+  letter-spacing: 1px;
+  background-color: #dbdbdb;
+  border: none;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.link-presentation .link-options__element-reset .reset-input:hover{
+  background-color: #c9c9c9;
 }
 
 .link-presentation .link-options__elements {
@@ -218,6 +241,7 @@ body {
   font-size: 1.6rem;
 }
 
+.link-presentation .underline-height-input,
 .link-presentation .text-input,
 .link-presentation .font-size-input{
   width: 100%;

@@ -17,6 +17,8 @@ const fontColorInputText = document.querySelector('.font-color-input-text')
 const fontColorInputColor = document.querySelector('.font-color-input-color')
 const mainColorInputText = document.querySelector('.main-color-input-text')
 const mainColorInputColor = document.querySelector('.main-color-input-color')
+const underlineHeightInput = document.querySelector('.underline-height-input')
+const resetInput = document.querySelector('.reset-input')
 
 const linkHandle = (e) =>{
     // REMOVING ACTIVE CLASS FROM ALL LINK BOXES
@@ -193,7 +195,26 @@ const mainColorInputColorHandle = () => {
     mainColorInputText.value = mainColorInputColor.value
 }
 
+// UNDERLINE HEIGHT OPTION
+const underlineHeightInputHandle = () =>{
+    if(underlineHeightInput.value >= 1  && underlineHeightInput.value <= 10){
+        root.style.setProperty('--underline-size',`${underlineHeightInput.value}px`) 
+    }
+}
 
+// RESET OPTION
+const resetInputHandle = () => {
+    stageLink.innerHTML = 'Link'
+    root.style.setProperty('--font-family', "'Times New Roman', Times, serif")
+    root.style.setProperty('--font-size','32px') 
+    root.style.setProperty('--font-weight', 'normal')
+    root.style.setProperty('--font-style', 'normal')
+    root.style.setProperty('--bgc-color', '#dbdbdb') 
+    document.body.style.backgroundColor = '#dbdbdb'
+    root.style.setProperty('--font-color', '#000000') 
+    root.style.setProperty('--main-color', '#1363df') 
+    root.style.setProperty('--underline-size','3px') 
+}
 
 
 links.forEach(link => {
@@ -225,3 +246,7 @@ fontColorInputColor.addEventListener('change', fontColorInputColorHandle)
 
 mainColorInputText.addEventListener('keyup', mainColorInputTextHandle)
 mainColorInputColor.addEventListener('change', mainColorInputColorHandle)
+
+underlineHeightInput.addEventListener('change', underlineHeightInputHandle)
+
+resetInput.addEventListener('click', resetInputHandle)
