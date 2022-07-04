@@ -11,8 +11,8 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
   background-color: #dbdbdb;
+  font-size: 1.6rem;
   font-family: 'Gantari', sans-serif;
   overflow: hidden;
 }
@@ -26,8 +26,8 @@ body {
 .menu .link-type-box {
   display: flex;
   flex-direction: row;
-  background-color: #eee;
   padding: .25em;
+  background-color: #eee;
   border-bottom: 1px solid #ccc;
   
 }
@@ -35,17 +35,16 @@ body {
 .menu .link-type-box .link-type {
   margin: 0.5em .25em;
   padding: .75em 1.5em;
+  background-color: #222;
+  color: white;
   font-size: 1.2rem;
   font-family: 'Gantari', sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
   border: none;
-  color: white;
-  background-color: #222;
   border-radius: 20px;
   cursor: pointer;
-  -webkit-transition: background-color .3s;
   transition: background-color .3s;
 }
 .menu .link-type-box .link-type--active {
@@ -60,10 +59,10 @@ body {
 }
 
 .menu .link-variation-boxes .link-variation-box {
+  display: none;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  display: none;
   padding: .25em;
 }
 .menu .link-variation-boxes .link-variation-box--active {
@@ -71,13 +70,13 @@ body {
 }
 
 .menu .link-variation-boxes .link-variation-box .link-variation {
-  padding: .4em .8em;
   margin: .25em;
+  padding: .4em .8em;
+  background-color: #eee;
   font-size: 1.4rem;
   font-family: 'Gantari', sans-serif;
   font-weight: bold;
   border: none;
-  background-color: #eee;
   border-radius: 2px;
   cursor: pointer;
   transition: color .3s, background-color .3s;
@@ -94,9 +93,9 @@ body {
 /* WORKSPACE */
 
 .workspace {
-  position: relative;
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 
 .workspace .generator-opener,
@@ -124,14 +123,12 @@ body {
   right: 0;
   margin: 0 25px 0 0;
 }
-
 .workspace .generator .generator-closer:hover,
 .workspace .generator-opener:hover,
 .workspace .options-opener:hover,
 .workspace .options .options-closer:hover {
   transform: scale(1.1);
 }
-
 .workspace .options-opener--active,
 .workspace .generator-opener--active {
   opacity: 0;
@@ -151,9 +148,9 @@ body {
 .workspace .generator{
   position: absolute;
   z-index: 2;
-  height: 600px;
   margin: 1em;
   padding: 1.25em 1em;
+  height: 600px;
   width: calc(100% - 2em);
   background-color: #eee;
   color: #444;
@@ -200,7 +197,12 @@ body {
   margin: .5em 0;
 }
 
-.workspace .options .options-element select {
+.workspace .options .options-element label {
+  font-size: 1.4rem;
+}
+
+.workspace .options .options-element .input-text,
+.workspace .options .options-element .input-number {
   background-color: #dbdbdb;
   width: 100%;
   padding: 0.25em 0.5em;
@@ -208,6 +210,30 @@ body {
   border: none;
   border-radius: 3px;
   font-size: 1.6rem;
+}
+.workspace .options .options-element .input-text:focus,
+.workspace .options .options-element .input-number:focus{
+  background-color: #c9c9c9;
+}
+
+.workspace .options .options-element .bgc-input-text,
+.workspace .options .options-element .font-color-input-text,
+.workspace .options .options-element .main-color-input-text
+{
+  width: 75%;
+}
+
+.workspace .options .options-element select {
+  padding: 0.25em 0.5em;
+  width: 100%;
+  background-color: #dbdbdb;
+  font-size: 1.6rem;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+}
+.workspace .options .options-element select:focus{
+  background-color: #c9c9c9;
 }
 
 .workspace .options .options-element-checkbox {
@@ -238,38 +264,14 @@ body {
   background-color: #c9c9c9;
 }
 
-
-.workspace .options .options-element label {
-  font-size: 1.4rem;
-}
-
-.workspace .options .options-element select:focus{
-  background-color: #c9c9c9;
-}
-
-.workspace .inputs {
+.workspace .options-element .input-box,
+.workspace .options-elements .input-box {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
 }
 
-.workspace .input-text,
-.workspace .input-number {
-  background-color: #dbdbdb;
-  width: 100%;
-  padding: 0.25em 0.5em;
-  outline: none;
-  border: none;
-  border-radius: 3px;
-  font-size: 1.6rem;
-}
-
-.workspace .input-text:focus,
-.workspace .input-number:focus{
-  background-color: #c9c9c9;
-}
-
-.workspace .input-color-div {
+.workspace .options-element .input-box .input-color-div {
   height: 27px;
   width: 27px;
   border-radius: 50%;
@@ -277,12 +279,11 @@ body {
   box-shadow: 0 0 5px #777;
   transition: box-shadow .3s;
 }
-
-.workspace .input-color-div:hover {
+.workspace .options-element .input-box .input-color-div:hover {
   box-shadow: 0 0 5px #444;
 }
 
-.workspace .input-color-div .input-color {
+.workspace .options-element .input-box .input-color-div .input-color {
   height: 27px;
   width: 27px;
   transform: scale(2);
@@ -302,6 +303,6 @@ body {
   width: calc(100% - 2em);
 }
 
-/* .workspace .link-stage__element {
+/* .workspace .link {
   text-transform: uppercase;
 } */
