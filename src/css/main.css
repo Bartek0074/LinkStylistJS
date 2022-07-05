@@ -150,7 +150,6 @@ body {
   z-index: 2;
   margin: 1em;
   padding: 1.25em 1em;
-  height: 600px;
   width: calc(100% - 2em);
   background-color: #eee;
   color: #444;
@@ -160,6 +159,27 @@ body {
 }
 .workspace .generator--active{
   transform: translate(0);
+}
+
+.workspace .generator .generator-code-container{
+  margin: 2em;
+}
+.workspace .generator .generator-code-container h2{
+  margin: .25em 0;
+}
+.workspace .generator .generator-code-container .generator-code{
+  margin: .25em 0;
+  padding: 1em;
+  width: calc(100% - 1em);
+  resize: none;
+  border: none;
+  outline: none;
+}
+.workspace .generator .generator-code-container .html-code{
+  max-height: 200px;
+}
+.workspace .generator .generator-code-container .css-code{
+  max-height: 600px;
 }
 
 .workspace .options {
