@@ -7,7 +7,8 @@ const optionsFrame = document.querySelector('.options')
 const generatorOpener = document.querySelector('.generator-opener')
 const generatorCloser = document.querySelector('.generator-closer')
 const generateCodeFrame = document.querySelector('.generator')
-const stageLink = document.querySelector('.link-stage__element')
+const codeHtml = document.querySelector('.html-code')
+const stageLink = document.querySelector('.link')
 const root = document.querySelector(':root')
 const textInput = document.querySelector('#text')
 const fontSizeInput = document.querySelector('#font-size')
@@ -87,6 +88,21 @@ const openGenerateCode = () => {
 const closeGenerateCode = () => {
     generateCodeFrame.classList.remove('generator--active')
     generatorOpener.classList.remove('.generator-opener--active')
+}
+
+const actualizeCode = () => {
+    // HTML
+    let linkClass = ""
+
+    linksVariation.forEach(link => {
+        if (link.classList.contains('link-variation--active')){
+            linkClass = link.classList[1]
+        }
+    })
+    
+    console.log(linkClass)
+
+    codeHtml.value = `<a class="${linkClass}">${textInput.value}</a>`
 }
 
 // TEXT VALUE OPTION
@@ -232,10 +248,12 @@ const resetInputHandle = () => {
 
 links.forEach(link => {
     link.addEventListener('click', linkHandle)
+    link.addEventListener('click', closeGenerateCode)
 })
 
 linksVariation.forEach(link => {
     link.addEventListener('click', linkVariationHandle)
+    link.addEventListener('click', closeGenerateCode)
 })
 
 textInput.addEventListener('keyup', textHandle)
@@ -250,6 +268,8 @@ fontStyleInput.addEventListener('click', fontStyleInputHandle)
 
 generatorOpener.addEventListener('click', openGenerateCode)
 generatorCloser.addEventListener('click', closeGenerateCode)
+
+generatorOpener.addEventListener('click', actualizeCode)
 
 optionsOpener.addEventListener('click', openOptions)
 optionsCloser.addEventListener('click', closeOptions)
