@@ -8,14 +8,12 @@
 
 html {
   font-size: 62.5%;
-  overflow-x: hidden;
 }
 
 body {
   background-color: #dbdbdb;
   font-size: 1.6rem;
   font-family: 'Gantari', sans-serif;
-  overflow-x: hidden;
 }
 
 /* MENU */
@@ -30,7 +28,7 @@ body {
   padding: .25em;
   background-color: #eee;
   border-bottom: 1px solid #ccc;
-  
+  overflow-x: scroll;
 }
 
 .menu .link-type-box .link-type {
@@ -63,8 +61,8 @@ body {
   display: none;
   justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap;
   padding: .25em;
+  overflow-x: scroll;
 }
 .menu .link-variation-boxes .link-variation-box--active {
   display: flex;
@@ -72,6 +70,7 @@ body {
 
 .menu .link-variation-boxes .link-variation-box .link-variation {
   margin: .25em;
+  white-space: nowrap;
   padding: .4em .8em;
   background-color: #eee;
   font-size: 1.4rem;
@@ -97,6 +96,7 @@ body {
   display: flex;
   flex-direction: row;
   position: relative;
+  overflow: hidden;
 }
 
 .workspace .generator-opener,
@@ -177,10 +177,10 @@ body {
   outline: none;
 }
 .workspace .generator .generator-code-container .html-code{
-  height: 50px;
+  height: 45px;
 }
 .workspace .generator .generator-code-container .css-code{
-  height: 400px;
+  height: 270px;
   /* max-height: 600px; */
 }
 
@@ -210,13 +210,13 @@ body {
 .workspace .options .options-elements {
   display: flex;
   flex-direction: row;
-  margin: .5em 0;
+  margin: .75em 0;
 }
 
 .workspace .options .options-element {
   display: flex;
   flex-direction: column;
-  margin: .5em 0;
+  margin: .75em 0;
 }
 
 .workspace .options .options-element label {

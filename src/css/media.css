@@ -1,6 +1,7 @@
 @media (min-width: 576px) {
     .menu .link-type-box {
       padding: 1em;
+      overflow-x: auto;
     }
     .menu .link-type-box .link-type {
       margin: 0.5em .75em;
@@ -11,6 +12,10 @@
     }
     .menu .link-variation-boxes {
       padding: 1em;
+    }
+    .menu .link-variation-boxes .link-variation-box {
+      overflow-x: auto;
+      flex-wrap: wrap;
     }
     .menu .link-variation-boxes .link-variation-box .link-variation {
       width: calc(50% - 1em);
