@@ -149,6 +149,7 @@ body {
   position: absolute;
   z-index: 2;
   margin: 1em;
+  margin-bottom: 20px;
   padding: 1.25em 1em;
   width: calc(100% - 2em);
   background-color: #eee;
@@ -168,7 +169,6 @@ body {
   margin: .25em 0;
 }
 .workspace .generator .generator-code-container .generator-code{
-  margin: .25em 0;
   padding: 1em;
   width: calc(100% - 1em);
   resize: none;
@@ -176,10 +176,11 @@ body {
   outline: none;
 }
 .workspace .generator .generator-code-container .html-code{
-  max-height: 200px;
+  height: 50px;
 }
 .workspace .generator .generator-code-container .css-code{
-  max-height: 600px;
+  height: 400px;
+  /* max-height: 600px; */
 }
 
 .workspace .options {
