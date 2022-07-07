@@ -12,138 +12,146 @@
     <link rel="stylesheet" href="./dist/css/media.min.css">
 </head>
 <body>
-    <div class="menu">
-        <div class="link-type-box">
-            <button class="link-type link-type--active">simple hover</button>
-            <button class="link-type">underline</button>
-            <button class="link-type">background</button>
-        </div>
-        <div class="link-variation-boxes">
-            <div class="link-variation-box link-variation-box--active">
-                <button class="link-variation hover__first link-variation--active">simple&nbsp;hover</button>
-                <button class="link-variation hover__second">simple&nbsp;hover&nbsp;&&nbsp;underline</button>
+    <div class="flex-wrapper">
+        <div class="content">
+            <div class="menu">
+                <div class="link-type-box">
+                    <button class="link-type link-type--active">simple hover</button>
+                    <button class="link-type">underline</button>
+                    <button class="link-type">background</button>
+                </div>
+                <div class="link-variation-boxes">
+                    <div class="link-variation-box link-variation-box--active">
+                        <button class="link-variation hover__first link-variation--active">simple-hover</button>
+                        <button class="link-variation hover__second">simple-hover&underline</button>
+                    </div>
+                    <div class="link-variation-box">
+                        <button class="link-variation underline__first">hover</button>
+                        <button class="link-variation underline__second">center-to-sides</button>
+                        <button class="link-variation underline__third">center-to-sides-reverse-return</button>
+                        <button class="link-variation underline__fourth">sides-to-center</button>
+                        <button class="link-variation underline__fifth">left-to-right</button>
+                        <button class="link-variation underline__sixth">left-to-right-reverse-return</button>
+                    </div>
+                    <div class="link-variation-box">
+                        <button class="link-variation background__first">hover</button>
+                        <button class="link-variation background__second">from-center-vertical</button>
+                        <button class="link-variation background__third">bottom-to-top</button>
+                        <button class="link-variation background__fourth">bottom-to-top-reverse-return</button>
+                        <button class="link-variation background__fifth">center-to-sides</button>
+                        <button class="link-variation background__sixth">left-to-right</button>
+                        <button class="link-variation background__seventh">left-to-right-reverse-return</button>
+                    </div>
+                </div>
             </div>
-            <div class="link-variation-box">
-                <button class="link-variation underline__first">hover</button>
-                <button class="link-variation underline__second">center&nbsp;-&nbsp;to&nbsp;-&nbsp;sides</button>
-                <button class="link-variation underline__third">center-to-sides-reverse-return</button>
-                <button class="link-variation underline__fourth">sides-to-center</button>
-                <button class="link-variation underline__fifth">left-to-right</button>
-                <button class="link-variation underline__sixth">left-to-right-reverse-return</button>
-            </div>
-            <div class="link-variation-box">
-                <button class="link-variation background__first">hover</button>
-                <button class="link-variation background__second">from-center-vertical</button>
-                <button class="link-variation background__third">bottom-to-top</button>
-                <button class="link-variation background__fourth">bottom-to-top-reverse-return</button>
-                <button class="link-variation background__fifth">center-to-sides</button>
-                <button class="link-variation background__sixth">left-to-right</button>
-                <button class="link-variation background__seventh">left-to-right-reverse-return</button>
-            </div>
-        </div>
-    </div>
 
-    <div class="workspace">
-        <button class="generator-opener" title="Generate code. Function is not supported yet">
-            <i class="fa-solid fa-code"></i>
-        </button>
-        <button class="options-opener">
-            <i class="fa-solid fa-gear"></i>
-        </button>
-        <div class="generator">
-            <button class="generator-closer">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="generator-code-container">
-                <h2>HTML</h2>
-                <textarea class="generator-code html-code" readonly>Here will be HTML code</textarea>
-            </div>
-            <div class="generator-code-container">
-                <h2>CSS</h2>
-                <textarea class="generator-code css-code" readonly>Here will be CSS code</textarea>
+            <div class="workspace">
+                <button class="generator-opener" title="Generate code. Function is not supported yet">
+                    <i class="fa-solid fa-code"></i>
+                </button>
+                <button class="options-opener">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <div class="generator">
+                    <button class="generator-closer">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <div class="generator-code-container">
+                        <h2>HTML</h2>
+                        <textarea class="generator-code html-code" readonly>Here will be HTML code</textarea>
+                    </div>
+                    <div class="generator-code-container">
+                        <h2>CSS</h2>
+                        <textarea class="generator-code css-code" readonly>Here will be CSS code</textarea>
+                    </div>
+                </div>
+                <form class="options">
+                    <button type="button" class="options-closer">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <h2>options</h2>
+                    <div class="options-element">
+                        <label for="text">text</label>
+                        <input type="text" value="Link" maxlength="24" class="input-text" id="text"> 
+                    </div>
+                    <div class="options-element">
+                        <label for="font-family">font-family</label>
+                        <select id="font-family">
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Arial">Arial</option>
+                            <option value="Courier New">Courier New</option>
+                            <option value="Cambria">Cambria</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Gill Sans">Gill Sans</option>
+                            <option value="Lucida Sans">Lucida Sans</option>
+                        </select>
+                    </div>
+                    <div class="options-elements">
+                        <div class="options-element">
+                            <label for="font-size">font-size</label>
+                            <input type="number" value="32" min="8" max="42" class="input-number" id="font-size">
+                        </div>
+                        <div class="options-element options-element-checkbox">
+                            <label for="font-weight">bold</label>
+                            <input type="checkbox" id="font-weight">
+                        </div>
+                        <div class="options-element options-element-checkbox">
+                            <label for="font-style">italic</label>
+                            <input type="checkbox" id="font-style">
+                        </div>
+                    </div>
+                    <div class="options-element">
+                        <label for="bgc-color">background-color</label>
+                        <div class="input-box">
+                            <input type="text" value="#dbdbdb" maxlength="7" class="input-text bgc-input-text"> 
+                            <div class="input-color-div">
+                                <input type="color" value="#dbdbdb" 
+                                class="input-color" id="bgc-color">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="options-element">
+                        <label for="font-color">font-color</label>
+                        <div class="input-box">
+                            <input type="text" value="#000000" maxlength="7" class="input-text font-color-input-text"> 
+                            <div class="input-color-div">
+                                <input type="color" value="#000000" 
+                                class="input-color" id="font-color">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="options-element">
+                        <label for="main-color">main-color</label>
+                        <div class="input-box">
+                            <input type="text" value="#1363df" maxlength="7" class="input-text main-color-input-text"> 
+                            <div class="input-color-div">
+                                <input type="color" value="#1363df" 
+                                class="input-color" id="main-color">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="options-elements">
+                        <div class="options-element">
+                            <label for="underline-height">underline-height</label>
+                            <input type="number" value="3" min="1" max="10" class="input-text" id="underline-height">
+                        </div>
+                        <div class="options-element options-element-reset">
+                            <input type="reset" value="RESET" class="reset-input">
+                        </div>     
+                    </div>
+                </form>
+                <div class="link-stage">
+                    <a class="link hover__first">Link</a>
+                </div>
             </div>
         </div>
-        <form class="options">
-            <button type="button" class="options-closer">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <h2>options</h2>
-            <div class="options-element">
-                <label for="text">text</label>
-                <input type="text" value="Link" maxlength="24" class="input-text" id="text"> 
-            </div>
-            <div class="options-element">
-                <label for="font-family">font-family</label>
-                <select id="font-family">
-                    <option value="Times New Roman">Times New Roman</option>
-                    <option value="Arial">Arial</option>
-                    <option value="Courier New">Courier New</option>
-                    <option value="Cambria">Cambria</option>
-                    <option value="Verdana">Verdana</option>
-                    <option value="Georgia">Georgia</option>
-                    <option value="Gill Sans">Gill Sans</option>
-                    <option value="Lucida Sans">Lucida Sans</option>
-                </select>
-            </div>
-            <div class="options-elements">
-                <div class="options-element">
-                    <label for="font-size">font-size</label>
-                    <input type="number" value="32" min="8" max="42" class="input-number" id="font-size">
-                </div>
-                <div class="options-element options-element-checkbox">
-                    <label for="font-weight">bold</label>
-                    <input type="checkbox" id="font-weight">
-                </div>
-                <div class="options-element options-element-checkbox">
-                    <label for="font-style">italic</label>
-                    <input type="checkbox" id="font-style">
-                </div>
-            </div>
-            <div class="options-element">
-                <label for="bgc-color">background-color</label>
-                <div class="input-box">
-                    <input type="text" value="#dbdbdb" maxlength="7" class="input-text bgc-input-text"> 
-                    <div class="input-color-div">
-                        <input type="color" value="#dbdbdb" 
-                        class="input-color" id="bgc-color">
-                    </div>
-                </div>
-            </div>
-            <div class="options-element">
-                <label for="font-color">font-color</label>
-                <div class="input-box">
-                    <input type="text" value="#000000" maxlength="7" class="input-text font-color-input-text"> 
-                    <div class="input-color-div">
-                        <input type="color" value="#000000" 
-                        class="input-color" id="font-color">
-                    </div>
-                </div>
-            </div>
-            <div class="options-element">
-                <label for="main-color">main-color</label>
-                <div class="input-box">
-                    <input type="text" value="#1363df" maxlength="7" class="input-text main-color-input-text"> 
-                    <div class="input-color-div">
-                        <input type="color" value="#1363df" 
-                        class="input-color" id="main-color">
-                    </div>
-                </div>
-            </div>
-            <div class="options-elements">
-                <div class="options-element">
-                    <label for="underline-height">underline-height</label>
-                    <input type="number" value="3" min="1" max="10" class="input-text" id="underline-height">
-                </div>
-                <div class="options-element options-element-reset">
-                    <input type="reset" value="RESET" class="reset-input">
-                </div>     
-            </div>
-        </form>
-        <div class="link-stage">
-            <a class="link hover__first">Link</a>
-        </div>
+        <footer>
+            <p class="footer__text"> &copy; <span class="footer-year"></span> | Bartosz Stępniak | 
+                <a href="https://github.com/Bartek0074" target="_blank"> <i class="fa-brands fa-github"></i></a> | 
+                <a href="https://bstpn.pl" target="_blank"> <i class="fa-brands fa-internet-explorer"></i></a></p>
+        </footer>
     </div>
-
     <script src="./dist/js/main.min.js"></script>
 </body>
 </html>

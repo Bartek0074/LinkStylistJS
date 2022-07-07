@@ -16,6 +16,13 @@ body {
   font-family: 'Gantari', sans-serif;
 }
 
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /* MENU */
 
 .menu {
@@ -328,3 +335,23 @@ body {
 /* .workspace .link {
   text-transform: uppercase;
 } */
+
+/* FOOTER */
+
+footer {
+    margin-top: 1em;
+    text-align: center;
+    background-color: #5a5a5a;
+}
+footer  p {
+      padding: .5em;
+      color: white;
+}
+footer p i {
+        color: white;
+        padding: 0.15em;
+        transition: color .3s;
+}
+footer p i:hover {
+        color: #5d90dd;
+}

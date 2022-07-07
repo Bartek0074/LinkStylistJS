@@ -24,6 +24,7 @@ const mainColorInputText = document.querySelector('.main-color-input-text')
 const mainColorInputColor = document.querySelector('#main-color')
 const underlineHeightInput = document.querySelector('#underline-height')
 const resetInput = document.querySelector('.reset-input')
+const footerYear = document.querySelector('.footer-year')
 
 const linkHandle = (e) =>{
     // REMOVING ACTIVE CLASS FROM ALL LINK BOXES
@@ -701,6 +702,13 @@ linksVariation.forEach(link => {
     link.addEventListener('click', linkVariationHandle)
     link.addEventListener('click', closeGenerateCode)
 })
+
+// FOOTER YEAR
+const handleCurrentYear = () => {
+    const year = (new Date).getFullYear();
+    footerYear.innerText = year;
+}
+handleCurrentYear();
 
 textInput.addEventListener('keyup', textHandle)
 
