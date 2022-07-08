@@ -429,48 +429,49 @@ const actualizeCode = () => {
             break;
 
 
-            // TO UPDATE: TRANSITION, CLASSES NAME, MAYBE DELETE PADDING
-        case 'background__first':
-            codeCss.value = `.background__first {
+            // TO UPDATE: CLASSES NAME
+        case 'background-hover':
+            codeCss.value = `.background-hover {
     position: relative;
-    padding: 10px 20px;
+    color: ${fontColorInputText.value};
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
     font-style: ${root.style.getPropertyValue('--font-style')};
     text-decoration: none;
-    color: ${fontColorInputText.value};
     cursor: pointer;
+    transition: color .3s, background-color .3s;
 }
-.background__first:hover {
+.background-hover:hover {
     background-color: ${mainColorInputText.value};
     color: ${bgcInputText.value});
 }` 
             break;
-            break;
+
         case 'background__second':
             codeCss.value = `.background__second {
     position: relative;
     z-index: 0;
-    padding: 10px 20px;
+    color: ${fontColorInputText.value};
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
     font-style: ${root.style.getPropertyValue('--font-style')};
     text-decoration: none;
-    color: ${fontColorInputText.value};
     cursor: pointer;
+    transition: color .3s;
 }
 .background__second::before {
     content: '';
     position: absolute;
+    z-index: -1;
     bottom: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    transform: scaleY(0);
     background-color: ${mainColorInputText.value};
-    z-index: -1;
+    transform: scaleY(0);
+    transition: transform .3s;
 } 
 .background__second:hover::before {
     transform: scaleY(1);
@@ -479,11 +480,11 @@ const actualizeCode = () => {
     color: ${bgcInputText.value};
 }` 
             break;
+     
         case 'background__third':
             codeCss.value = `.background__third {
     position: relative;
     z-index: 0;
-    padding: 10px 20px;
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
@@ -491,18 +492,20 @@ const actualizeCode = () => {
     text-decoration: none;
     color: ${fontColorInputText.value};
     cursor: pointer;
+    transition: color .3s;
 }
 .background__third::before {
     content: '';
     position: absolute;
+    z-index: -1;
     bottom: 0;
     left: 0;
     height: 100%;
     width: 100%;
+    background-color: ${mainColorInputText.value};
     transform: scaleY(0);
     transform-origin: bottom;
-    background-color: ${mainColorInputText.value};
-    z-index: -1;
+    transition: transform .3s;
 }
 .background__third:hover::before {
     transform: scaleY(1);
@@ -511,11 +514,11 @@ const actualizeCode = () => {
     color: ${bgcInputText.value};
 }` 
             break;
+       
         case 'background__fourth':
             codeCss.value = `.background__fourth {
     position: relative;
     z-index: 0;
-    padding: 10px 20px;
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
@@ -523,18 +526,19 @@ const actualizeCode = () => {
     text-decoration: none;
     color: ${fontColorInputText.value};
     cursor: pointer;
+    transition: color .3s;
 }
 .background__fourth::before {
     content: '';
     position: absolute;
+    z-index: -1;
     bottom: 0;
     left: 0;
     height: 100%;
     width: 100%;
+    background-color: ${mainColorInputText.value};
     transform: scaleY(0);
     transform-origin: top;
-    background-color: ${mainColorInputText.value};
-    z-index: -1;
     transition: transform .3s;
 } 
 .background__fourth:hover::before {
@@ -545,11 +549,11 @@ const actualizeCode = () => {
     color: ${bgcInputText.value};
 }` 
             break;
+
         case 'background__fifth':
             codeCss.value = `.background__fifth {
     position: relative;
     z-index: 0;
-    padding: 10px 20px;
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
@@ -557,30 +561,32 @@ const actualizeCode = () => {
     text-decoration: none;
     color: ${fontColorInputText.value};
     cursor: pointer;
+    transition: color .3s;
 }
 .background__fifth::before {
     content: '';
     position: absolute;
+    z-index: -1;
     bottom: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    transform: scaleX(0);
     background-color: ${mainColorInputText.value};
-    z-index: -1;
+    transform: scaleX(0);
+    transition: transform .3s;
 }
 .background__fifth:hover::before {
-        transform: scaleX(1);
+    transform: scaleX(1);
 }
 .background__fifth:hover {
     color: ${bgcInputText.value};
 }` 
             break;
+
         case 'background__sixth':
             codeCss.value = `.background__sixth {
     position: relative;
     z-index: 0;
-    padding: 10px 20px;
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
@@ -588,18 +594,20 @@ const actualizeCode = () => {
     text-decoration: none;
     color: ${fontColorInputText.value};
     cursor: pointer;
+    transition: color .3s;
 }
 .background__sixth::before {
     content: '';
     position: absolute;
+    z-index: -1;
     bottom: 0;
     left: 0;
     height: 100%;
     width: 100%;
+    background-color: ${mainColorInputText.value};
     transform: scaleX(0);
     transform-origin: left;
-    background-color: ${mainColorInputText.value};
-    z-index: -1;
+    transition: transform .3s;
 }
 .background__sixth:hover::before {
     transform: scaleX(1);
@@ -608,6 +616,7 @@ const actualizeCode = () => {
     color: ${bgcInputText.value};
 }` 
             break;
+
         case 'background__seventh':
             codeCss.value = `.background__seventh {
     position: relative;
@@ -620,18 +629,19 @@ const actualizeCode = () => {
     text-decoration: none;
     color: ${fontColorInputText.value};
     cursor: pointer;
+    transition: color .3s;
 }
 .background__seventh::before {
     content: '';
+    z-index: -1;
     position: absolute;
     bottom: 0;
     left: 0;
     height: 100%;
     width: 100%;
+    background-color: ${mainColorInputText.value};
     transform: scaleX(0);
     transform-origin: right;
-    background-color: ${mainColorInputText.value};
-    z-index: -1;
     transition: transform .3s;
 }
 .background__seventh:hover::before {
@@ -642,6 +652,7 @@ const actualizeCode = () => {
     color: ${bgcInputText.value};
 }` 
             break;
+      
         default:
             console.log('not found class')
       }
@@ -780,7 +791,7 @@ const underlineHeightInputHandle = () =>{
 
 // RESET OPTION
 const resetInputHandle = () => {
-    stageLink.innerHTML = 'Link'
+    stageLink.innerHTML = 'Hover Me'
     root.style.setProperty('--font-family', "'Times New Roman', Times, serif")
     root.style.setProperty('--font-size','32px') 
     root.style.setProperty('--font-weight', 'normal')
