@@ -115,8 +115,8 @@ const actualizeCode = () => {
     }
 
     switch(linkClass) {
-        case 'hover__first':
-            codeCss.value = `.hover__first {
+        case 'simple-hover':
+            codeCss.value = `.simple-hover {
     position: relative;
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
@@ -127,18 +127,19 @@ const actualizeCode = () => {
     color: ${fontColorInputText.value};
 }
             
-.hover__first,
-.hover__first::before,
-.hover__first::after {
+.simple-hover,
+.simple-hover::before,
+.simple-hover::after {
     transition: .3s;
 }
 
-.hover__first:hover {
+.simple-hover:hover {
     color: ${mainColorInputText.value};
 }` 
             break;
-        case 'hover__second':
-            codeCss.value = `.hover__second {
+
+        case 'simple-hover-with-underline':
+            codeCss.value = `.simple-hover-with-underline {
     position: relative;
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
@@ -147,22 +148,23 @@ const actualizeCode = () => {
     text-decoration: none;
     color: ${fontColorInputText.value};
     cursor: pointer;
-    border-bottom: ${underlineHeightInput.value}px solid transparent;
 }
             
-.hover__second,
-.hover__second::before,
-.hover__second::after {
+.simple-hover-with-underline,
+.simple-hover-with-underline::before,
+.simple-hover-with-underline::after {
     transition: .3s;
 }
 
-.hover__second:hover {
+.simple-hover-with-underline:hover {
     color: ${mainColorInputText.value};
+    text-decoration: underline;
 }` 
             break;
        
-        case 'underline__first':
-            codeCss.value = `.underline__first {
+
+        case 'underline-hover':
+            codeCss.value = `.underline-hover {
     position: relative;
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
@@ -173,12 +175,13 @@ const actualizeCode = () => {
     cursor: pointer;
     border-bottom: ${underlineHeightInput.value}px solid transparent;
 }
-.underline__first:hover {
+.underline-hover:hover {
     border-bottom-color: ${mainColorInputText.value};
 }` 
             break;
-        case 'underline__second':
-            codeCss.value = `.underline__second {
+
+        case 'underline-center-to-edges':
+            codeCss.value = `.underline-center-to-edges {
     position: relative;
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
@@ -188,7 +191,7 @@ const actualizeCode = () => {
     color: ${fontColorInputText.value};
     cursor: pointer;
 }
-.underline__second::before {
+.underline-center-to-edges::before {
     content: '';
     position: absolute;
     left: 0;
@@ -198,12 +201,13 @@ const actualizeCode = () => {
     height: ${underlineHeightInput.value}px;
     background-color: ${mainColorInputText.value};
 }  
-.underline__second:before {
+.underline-center-to-edges:before {
     transform: scaleX(1);
 }` 
             break;
-        case 'underline__third':
-            codeCss.value = `.underline__third {
+
+        case 'underline-center-to-edges-reverse-return':
+            codeCss.value = `.underline-center-to-edges-reverse-return {
     position: relative;
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
@@ -213,8 +217,8 @@ const actualizeCode = () => {
     color: ${fontColorInputText.value};
     cursor: pointer;
 }
-.underline__third::before,
-.underline__third::after {
+.underline-center-to-edges-reverse-return::before,
+.underline-center-to-edges-reverse-return::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -224,25 +228,26 @@ const actualizeCode = () => {
     background-color: ${mainColorInputText.value};
     transition: transform .3s;
 }  
-.underline__third::before {
+.underline-center-to-edges-reverse-return::before {
     left: 0;
     transform-origin: left;
 }
-.underline__third::after {
+.underline-center-to-edges-reverse-return::after {
     right: 0;
     transform-origin: right;
 }
-.underline__third:hover::before {
+.underline-center-to-edges-reverse-return:hover::before {
     transform: scaleX(1);
     transform-origin: right;
 } 
-.underline__third:hover::after {
+.underline-center-to-edges-reverse-return:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }` 
             break;
-        case 'underline__fourth':
-            codeCss.value = `.underline__fourth {
+
+        case 'underline-edges-to-center':
+            codeCss.value = `.underline-edges-to-center {
     position: relative;
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
@@ -252,8 +257,8 @@ const actualizeCode = () => {
     color: ${fontColorInputText.value};
     cursor: pointer;
 }
-.underline__fourth::before,
-.underline__fourth::after {
+.underline-edges-to-center::before,
+.underline-edges-to-center::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -263,25 +268,22 @@ const actualizeCode = () => {
     background-color: ${mainColorInputText.value};
     transition: transform .3s;
 }
-.underline__fourth::before {
+.underline-edges-to-center::before {
+    transform-origin: left;
     left: 0;
-    transform-origin: right;
 }  
-.underline__fourth::after {
+.underline-edges-to-center::after {
+    transform-origin: right;
     right: 0;
-    transform-origin: left;
 }
-.underline__fourth:hover::before {
+.underline-edges-to-center:hover::before,
+.underline-edges-to-center:hover::after {
     transform: scaleX(1);
-    transform-origin: left;
-}  
-.underline__fourth:hover::after {
-    transform: scaleX(1);
-    transform-origin: right;
 }` 
             break;
-        case 'underline__fifth':
-            codeCss.value = `.underline__fifth {
+
+        case 'underline-edges-to-center-reverse-return':
+            codeCss.value = `.underline-edges-to-center-reverse-return {
     position: relative;
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
@@ -291,7 +293,47 @@ const actualizeCode = () => {
     color: ${fontColorInputText.value};
     cursor: pointer;
 }
-.underline__fifth::before {
+.underline-edges-to-center-reverse-return::before,
+.underline-edges-to-center-reverse-return::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: ${underlineHeightInput.value}px;
+    width: 51%;
+    transform: scaleX(0);
+    background-color: ${mainColorInputText.value};
+    transition: transform .3s;
+}
+.underline-edges-to-center-reverse-return::before {
+    left: 0;
+    transform-origin: right;
+}  
+.underline-edges-to-center-reverse-return::after {
+    right: 0;
+    transform-origin: left;
+}
+.underline-edges-to-center-reverse-return:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}  
+.underline-edges-to-center-reverse-return:hover::after {
+    transform: scaleX(1);
+    transform-origin: right;
+}` 
+            break;
+
+        case 'uderline-left-to-right':
+            codeCss.value = `.uderline-left-to-right {
+    position: relative;
+    font-family: ${fontFamilyInput.value};
+    font-size: ${fontSizeInput.value}px;
+    font-weight: ${root.style.getPropertyValue('--font-weight')};
+    font-style: ${root.style.getPropertyValue('--font-style')};
+    text-decoration: none;
+    color: ${fontColorInputText.value};
+    cursor: pointer;
+}
+.uderline-left-to-right::before {
     content: '';
     position: absolute;
     left: 0;
@@ -302,12 +344,13 @@ const actualizeCode = () => {
     height: ${underlineHeightInput.value}px;
     background-color: ${mainColorInputText.value};
 } 
-.underline__fifth:hover::before {
+.uderline-left-to-right:hover::before {
     transform: scaleX(1);
 }` 
             break;
-        case 'underline__sixth':
-            codeCss.value = `.underline__sixth {
+
+        case 'uderline-left-to-right-reverse-return':
+            codeCss.value = `.uderline-left-to-right-reverse-return {
     position: relative;
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
@@ -317,7 +360,7 @@ const actualizeCode = () => {
     color: ${fontColorInputText.value};
     cursor: pointer;
 }
-.underline__sixth::before {
+.uderline-left-to-right-reverse-return::before {
     content: '';
     position: absolute;
     left: 0;
@@ -329,12 +372,13 @@ const actualizeCode = () => {
     background-color: ${mainColorInputText.value};
     transition: transform .3s ease-in;
 }
-.underline__sixth:hover::before {
+.uderline-left-to-right-reverse-return:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 }` 
             break;
     
+            
         case 'background__first':
             codeCss.value = `.background__first {
     position: relative;

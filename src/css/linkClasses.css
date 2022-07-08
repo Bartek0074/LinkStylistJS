@@ -37,34 +37,31 @@
 /* SIMPLE HOVER */
 /*  */
     
-/* HOVER FIRST */
-.workspace .link-stage .hover__first:hover {
+/* SIMPLE HOVER */
+.workspace .link-stage .simple-hover:hover {
     color: var(--main-color);
 }
 
-/* HOVER SECOND */
-.workspace .link-stage .hover__second {
-    border-bottom: var(--underline-size) solid transparent;
-}
-.workspace .link-stage .hover__second:hover {
+/* SIMPLE HOVER WITH UNDERLINE */
+.workspace .link-stage .simple-hover-with-underline:hover {
     color: var(--main-color);
-    border-bottom-color: var(--main-color);
+    text-decoration: underline;
 }
 
 /*  */
 /* UNDERLINE */
 /*  */
 
-/* UNDERLINE FIRST */
-.workspace .link-stage .underline__first {
+/* UNDERLINE HOVER */
+.workspace .link-stage .underline-hover {
     border-bottom: var(--underline-size) solid transparent;
 } 
-.workspace .link-stage .underline__first:hover {
+.workspace .link-stage .underline-hover:hover {
     border-bottom-color: var(--main-color);
 }
 
-/* UNDERLINE SECOND */
-.workspace .link-stage .underline__second::before {
+/* CENTER TO EDGES */
+.workspace .link-stage .underline-center-to-edges::before {
     content: '';
     position: absolute;
     left: 0;
@@ -74,13 +71,13 @@
     height: var(--underline-size);
     background-color: var(--main-color);
 }  
-.workspace .link-stage .underline__second:hover:before {
+.workspace .link-stage .underline-center-to-edges:hover:before {
     transform: scaleX(1);
 }
  
-/* UNDERLINE THIRD */
-.workspace .link-stage .underline__third::before,
-.workspace .link-stage .underline__third::after {
+/* CENTER TO EDGES REVERSE RETURN */
+.workspace .link-stage .underline-center-to-edges-reverse-return::before,
+.workspace .link-stage .underline-center-to-edges-reverse-return::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -90,26 +87,26 @@
     background-color: var(--main-color);
     transition: transform .3s;
 }  
-.workspace .link-stage .underline__third::before {
+.workspace .link-stage .underline-center-to-edges-reverse-return::before {
     left: 0;
     transform-origin: left;
 }
-.workspace .link-stage .underline__third::after {
+.workspace .link-stage .underline-center-to-edges-reverse-return::after {
     right: 0;
     transform-origin: right;
 }
-.workspace .link-stage .underline__third:hover::before {
+.workspace .link-stage .underline-center-to-edges-reverse-return:hover::before {
     transform: scaleX(1);
     transform-origin: right;
 } 
-.workspace .link-stage .underline__third:hover::after {
+.workspace .link-stage .underline-center-to-edges-reverse-return:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
  
-/* UNDERLINE FOURTH */
-.workspace .link-stage .underline__fourth::before,
-.workspace .link-stage .underline__fourth::after {
+/* EDGES TO CENTER */
+.workspace .link-stage .underline-edges-to-center::before,
+.workspace .link-stage .underline-edges-to-center::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -119,25 +116,50 @@
     background-color: var(--main-color);
     transition: transform .3s;
 }
-.workspace .link-stage .underline__fourth::before {
+.workspace .link-stage .underline-edges-to-center::before {
+    transform-origin: left;
+    left: 0;
+}  
+.workspace .link-stage .underline-edges-to-center::after {
+    transform-origin: right;
+    right: 0;
+}
+.workspace .link-stage .underline-edges-to-center:hover::before,
+.workspace .link-stage .underline-edges-to-center:hover::after {
+    transform: scaleX(1);
+}
+
+/* EDGES TO CENTER REVERSE RETURN*/
+.workspace .link-stage .underline-edges-to-center-reverse-return::before,
+.workspace .link-stage .underline-edges-to-center-reverse-return::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: var(--underline-size);
+    width: 51%;
+    transform: scaleX(0);
+    background-color: var(--main-color);
+    transition: transform .3s;
+}
+.workspace .link-stage .underline-edges-to-center-reverse-return::before {
     left: 0;
     transform-origin: right;
 }  
-.workspace .link-stage .underline__fourth::after {
+.workspace .link-stage .underline-edges-to-center-reverse-return::after {
     right: 0;
     transform-origin: left;
 }
-.workspace .link-stage .underline__fourth:hover::before {
+.workspace .link-stage .underline-edges-to-center-reverse-return:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 }  
-.workspace .link-stage .underline__fourth:hover::after {
+.workspace .link-stage .underline-edges-to-center-reverse-return:hover::after {
     transform: scaleX(1);
     transform-origin: right;
 }
   
-/* UNDERLINE FIFTH */
-.workspace .link-stage .underline__fifth::before {
+/* UNDERLINE LEFT TO RIGHT */
+.workspace .link-stage .uderline-left-to-right::before {
     content: '';
     position: absolute;
     left: 0;
@@ -148,12 +170,12 @@
     height: var(--underline-size);
     background-color: var(--main-color);
 } 
-.workspace .link-stage .underline__fifth:hover::before {
+.workspace .link-stage .uderline-left-to-right:hover::before {
     transform: scaleX(1);
 }
 
-/* UNDERLINE SIXTH */
-.workspace .link-stage .underline__sixth::before {
+/* UNDERLINE LEFT TO RIGHT REVERSE RETURN */
+.workspace .link-stage .uderline-left-to-right-reverse-return::before {
     content: '';
     position: absolute;
     left: 0;
@@ -165,7 +187,7 @@
     background-color: var(--main-color);
     transition: transform .3s ease-in;
 }
-.workspace .link-stage .underline__sixth:hover::before {
+.workspace .link-stage .uderline-left-to-right-reverse-return:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 }
