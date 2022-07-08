@@ -171,7 +171,7 @@ body {
 }
 
 .workspace .generator .generator-code-container{
-  margin: 2em;
+  margin: 1.5em;
 }
 .workspace .generator .generator-code-container h2{
   margin: .25em 0;
@@ -187,8 +187,24 @@ body {
   height: 45px;
 }
 .workspace .generator .generator-code-container .css-code{
-  height: 270px;
-  /* max-height: 600px; */
+  height: 210px;
+}
+.workspace .generator .generator-code-container .button-copy{
+  margin-top: 1em;
+  padding: .625em 1.25em;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+.workspace .generator .generator-code-container .button-copy:hover{
+  background-color:#1363df;
 }
 
 .workspace .options {

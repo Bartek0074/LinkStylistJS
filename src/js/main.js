@@ -8,6 +8,8 @@ const generatorOpener = document.querySelector('.generator-opener')
 const generatorCloser = document.querySelector('.generator-closer')
 const generateCodeFrame = document.querySelector('.generator')
 const codeHtml = document.querySelector('.html-code')
+const buttonCopyHtml = document.querySelector('.button-copy-html')
+const buttonCopyCss = document.querySelector('.button-copy-css')
 const codeCss = document.querySelector('.css-code')
 const stageLink = document.querySelector('.link')
 const root = document.querySelector(':root')
@@ -647,8 +649,13 @@ const actualizeCode = () => {
 }` 
             break;
         default:
-            console.log('nie ma')
+            console.log('not found class')
       }
+}
+
+const copyToClipboard = (code) => {
+        code.select()
+        document.execCommand('copy')
 }
 
 // TEXT VALUE OPTION
@@ -821,6 +828,9 @@ fontStyleInput.addEventListener('click', fontStyleInputHandle)
 
 generatorOpener.addEventListener('click', openGenerateCode)
 generatorCloser.addEventListener('click', closeGenerateCode)
+
+buttonCopyHtml.addEventListener('click', () => copyToClipboard(codeHtml))
+buttonCopyCss.addEventListener('click', () => copyToClipboard(codeCss))
 
 generatorOpener.addEventListener('click', actualizeCode)
 
