@@ -27,11 +27,11 @@
     cursor: pointer;
 }
   
-.workspace .link-stage a,
+/* .workspace .link-stage a,
 .workspace .link-stage a::before,
 .workspace .link-stage a::after {
     transition: .3s;
-}
+} */
   
 /*  */
 /* SIMPLE HOVER */
@@ -55,12 +55,13 @@
 /* UNDERLINE HOVER */
 .workspace .link-stage .underline-hover {
     border-bottom: var(--underline-size) solid transparent;
+    transition: border-bottom .3s;
 } 
 .workspace .link-stage .underline-hover:hover {
     border-bottom-color: var(--main-color);
 }
 
-/* CENTER TO EDGES */
+/* UNDERLINE CENTER TO EDGES */
 .workspace .link-stage .underline-center-to-edges::before {
     content: '';
     position: absolute;
@@ -70,6 +71,7 @@
     transform: scaleX(0);
     height: var(--underline-size);
     background-color: var(--main-color);
+    transition: transform .3s;
 }  
 .workspace .link-stage .underline-center-to-edges:hover:before {
     transform: scaleX(1);
@@ -169,6 +171,7 @@
     transform-origin: left;
     height: var(--underline-size);
     background-color: var(--main-color);
+    transition: transform .3s;
 } 
 .workspace .link-stage .underline-left-to-right:hover::before {
     transform: scaleX(1);
@@ -203,6 +206,7 @@
     transform-origin: right;
     height: var(--underline-size);
     background-color: var(--main-color);
+    transition: transform .3s;
 } 
 .workspace .link-stage .underline-right-to-left:hover::before {
     transform: scaleX(1);

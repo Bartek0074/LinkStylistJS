@@ -119,20 +119,14 @@ const actualizeCode = () => {
     switch(linkClass) {
         case 'simple-hover':
             codeCss.value = `.simple-hover {
-    position: relative;
+    color: ${fontColorInputText.value};
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
     font-style: ${root.style.getPropertyValue('--font-style')};
     text-decoration: none;
     cursor: pointer;
-    color: ${fontColorInputText.value};
-}
-            
-.simple-hover,
-.simple-hover::before,
-.simple-hover::after {
-    transition: .3s;
+    transition: color .3s
 }
 
 .simple-hover:hover {
@@ -142,22 +136,16 @@ const actualizeCode = () => {
 
         case 'simple-hover-with-underline':
             codeCss.value = `.simple-hover-with-underline {
-    position: relative;
+    color: ${fontColorInputText.value};
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
     font-style: ${root.style.getPropertyValue('--font-style')};
     text-decoration: none;
-    color: ${fontColorInputText.value};
     cursor: pointer;
+    transition: color .3s, text-decoration .3s
 }
             
-.simple-hover-with-underline,
-.simple-hover-with-underline::before,
-.simple-hover-with-underline::after {
-    transition: .3s;
-}
-
 .simple-hover-with-underline:hover {
     color: ${mainColorInputText.value};
     text-decoration: underline;
@@ -168,14 +156,15 @@ const actualizeCode = () => {
         case 'underline-hover':
             codeCss.value = `.underline-hover {
     position: relative;
+    color: ${fontColorInputText.value};
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
     font-style: ${root.style.getPropertyValue('--font-style')};
     text-decoration: none;
-    color: ${fontColorInputText.value};
-    cursor: pointer;
     border-bottom: ${underlineHeightInput.value}px solid transparent;
+    cursor: pointer;
+    transition: border-bottom .3s;
 }
 .underline-hover:hover {
     border-bottom-color: ${mainColorInputText.value};
@@ -185,12 +174,12 @@ const actualizeCode = () => {
         case 'underline-center-to-edges':
             codeCss.value = `.underline-center-to-edges {
     position: relative;
+    color: ${fontColorInputText.value};
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
     font-style: ${root.style.getPropertyValue('--font-style')};
     text-decoration: none;
-    color: ${fontColorInputText.value};
     cursor: pointer;
 }
 .underline-center-to-edges::before {
@@ -199,9 +188,10 @@ const actualizeCode = () => {
     left: 0;
     bottom: 0;
     width: 100%;
-    transform: scaleX(0);
     height: ${underlineHeightInput.value}px;
     background-color: ${mainColorInputText.value};
+    transform: scaleX(0);
+    transition: transform .3s;
 }  
 .underline-center-to-edges:before {
     transform: scaleX(1);
@@ -211,12 +201,12 @@ const actualizeCode = () => {
         case 'underline-center-to-edges-reverse-return':
             codeCss.value = `.underline-center-to-edges-reverse-return {
     position: relative;
+    color: ${fontColorInputText.value};
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
     font-style: ${root.style.getPropertyValue('--font-style')};
     text-decoration: none;
-    color: ${fontColorInputText.value};
     cursor: pointer;
 }
 .underline-center-to-edges-reverse-return::before,
@@ -226,8 +216,8 @@ const actualizeCode = () => {
     bottom: 0;
     height: ${underlineHeightInput.value}px;
     width: 51%;
-    transform: scaleX(0);
     background-color: ${mainColorInputText.value};
+    transform: scaleX(0);
     transition: transform .3s;
 }  
 .underline-center-to-edges-reverse-return::before {
@@ -251,12 +241,12 @@ const actualizeCode = () => {
         case 'underline-edges-to-center':
             codeCss.value = `.underline-edges-to-center {
     position: relative;
+    color: ${fontColorInputText.value};
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
     font-style: ${root.style.getPropertyValue('--font-style')};
     text-decoration: none;
-    color: ${fontColorInputText.value};
     cursor: pointer;
 }
 .underline-edges-to-center::before,
@@ -266,8 +256,8 @@ const actualizeCode = () => {
     bottom: 0;
     height: ${underlineHeightInput.value}px;
     width: 51%;
-    transform: scaleX(0);
     background-color: ${mainColorInputText.value};
+    transform: scaleX(0);
     transition: transform .3s;
 }
 .underline-edges-to-center::before {
@@ -287,12 +277,12 @@ const actualizeCode = () => {
         case 'underline-edges-to-center-reverse-return':
             codeCss.value = `.underline-edges-to-center-reverse-return {
     position: relative;
+    color: ${fontColorInputText.value};
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
     font-style: ${root.style.getPropertyValue('--font-style')};
     text-decoration: none;
-    color: ${fontColorInputText.value};
     cursor: pointer;
 }
 .underline-edges-to-center-reverse-return::before,
@@ -302,8 +292,8 @@ const actualizeCode = () => {
     bottom: 0;
     height: ${underlineHeightInput.value}px;
     width: 51%;
-    transform: scaleX(0);
     background-color: ${mainColorInputText.value};
+    transform: scaleX(0);
     transition: transform .3s;
 }
 .underline-edges-to-center-reverse-return::before {
@@ -327,12 +317,12 @@ const actualizeCode = () => {
         case 'underline-left-to-right':
             codeCss.value = `.underline-left-to-right {
     position: relative;
+    color: ${fontColorInputText.value};
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
     font-style: ${root.style.getPropertyValue('--font-style')};
     text-decoration: none;
-    color: ${fontColorInputText.value};
     cursor: pointer;
 }
 .underline-left-to-right::before {
@@ -341,10 +331,11 @@ const actualizeCode = () => {
     left: 0;
     bottom: 0;
     width: 100%;
-    transform: scaleX(0);
-    transform-origin: left;
     height: ${underlineHeightInput.value}px;
     background-color: ${mainColorInputText.value};
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s;
 } 
 .underline-left-to-right:hover::before {
     transform: scaleX(1);
@@ -354,12 +345,12 @@ const actualizeCode = () => {
         case 'underline-left-to-right-reverse-return':
             codeCss.value = `.underline-left-to-right-reverse-return {
     position: relative;
+    color: ${fontColorInputText.value};
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
     font-style: ${root.style.getPropertyValue('--font-style')};
     text-decoration: none;
-    color: ${fontColorInputText.value};
     cursor: pointer;
 }
 .underline-left-to-right-reverse-return::before {
@@ -368,10 +359,10 @@ const actualizeCode = () => {
     left: 0;
     bottom: 0;
     width: 100%;
-    transform: scaleX(0);
-    transform-origin: right;
     height: ${underlineHeightInput.value}px;
     background-color: ${mainColorInputText.value};
+    transform: scaleX(0);
+    transform-origin: right;
     transition: transform .3s ease-in;
 }
 .underline-left-to-right-reverse-return:hover::before {
@@ -383,12 +374,12 @@ const actualizeCode = () => {
         case 'underline-right-to-left':
             codeCss.value = `.underline-right-to-left {
     position: relative;
+    color: ${fontColorInputText.value};
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
     font-style: ${root.style.getPropertyValue('--font-style')};
     text-decoration: none;
-    color: ${fontColorInputText.value};
     cursor: pointer;
 }
 .underline-right-to-left::before {
@@ -397,10 +388,11 @@ const actualizeCode = () => {
     left: 0;
     bottom: 0;
     width: 100%;
-    transform: scaleX(0);
-    transform-origin: right;
     height: ${underlineHeightInput.value}px;
     background-color: ${mainColorInputText.value};
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .3s;
 } 
 .underline-right-to-left:hover::before {
     transform: scaleX(1);
@@ -410,12 +402,12 @@ const actualizeCode = () => {
         case 'underline-right-to-left-reverse-return':
             codeCss.value = `.underline-right-to-left-reverse-return {
     position: relative;
+    color: ${fontColorInputText.value};
     font-family: ${fontFamilyInput.value};
     font-size: ${fontSizeInput.value}px;
     font-weight: ${root.style.getPropertyValue('--font-weight')};
     font-style: ${root.style.getPropertyValue('--font-style')};
     text-decoration: none;
-    color: ${fontColorInputText.value};
     cursor: pointer;
 }
 .underline-right-to-left-reverse-return::before {
@@ -424,10 +416,10 @@ const actualizeCode = () => {
     left: 0;
     bottom: 0;
     width: 100%;
-    transform: scaleX(0);
-    transform-origin: left;
     height: ${underlineHeightInput.value}px;
     background-color: ${mainColorInputText.value};
+    transform: scaleX(0);
+    transform-origin: left;
     transition: transform .3s ease-in;
 }
 .underline-right-to-left-reverse-return:hover::before {
@@ -436,6 +428,8 @@ const actualizeCode = () => {
 }` 
             break;
 
+
+            // TO UPDATE: TRANSITION, CLASSES NAME, MAYBE DELETE PADDING
         case 'background__first':
             codeCss.value = `.background__first {
     position: relative;
