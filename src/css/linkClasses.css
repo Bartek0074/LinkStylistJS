@@ -67,6 +67,23 @@
     border-bottom-color: var(--main-color);
 }
 
+/* UNDERLINE SCALING HEIGHT */
+
+.workspace .link-stage .underline-scaling-height::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform: scaleY(0);
+    height: var(--underline-size);
+    background-color: var(--main-color);
+    transition: transform .3s;
+} 
+.workspace .link-stage .underline-scaling-height:hover:before {
+    transform: scaleY(1);
+}
+
 /* UNDERLINE CENTER TO EDGES */
 .workspace .link-stage .underline-center-to-edges::before {
     content: '';
@@ -250,7 +267,7 @@
     color: var(--bgc-color);
 }
 
-/* BACKGROUND CENTER TO EDGES VERTICA; */
+/* BACKGROUND CENTER TO EDGES VERTICAL */
 .workspace .link-stage .background-center-to-edges-vertical {
     z-index: 0;
     transition: color .3s;
@@ -271,6 +288,103 @@
     transform: scaleY(1);
 }
 .workspace .link-stage .background-center-to-edges-vertical:hover {
+    color: var(--bgc-color);
+}
+
+/* BACKGROUND CENTER TO EDGES VERTICAL REVERSE RETURN */
+.workspace .link-stage .background-center-to-edges-vertical-reverse-return {
+    z-index: 0;
+    transition: color .3s;
+} 
+.workspace .link-stage .background-center-to-edges-vertical-reverse-return::before,
+.workspace .link-stage .background-center-to-edges-vertical-reverse-return::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    background-color: var(--main-color);
+    transform: scaleY(0);
+    transition: transform .3s;
+} 
+.workspace .link-stage .background-center-to-edges-vertical-reverse-return::before {
+    bottom: 0;
+    transform-origin: bottom;
+}
+.workspace .link-stage .background-center-to-edges-vertical-reverse-return::after {
+    top: 0;
+    transform-origin: top;
+}
+.workspace .link-stage .background-center-to-edges-vertical-reverse-return:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
+} 
+.workspace .link-stage .background-center-to-edges-vertical-reverse-return:hover::after {
+    transform: scaleY(1);
+    transform-origin: bottom;
+}
+.workspace .link-stage .background-center-to-edges-vertical-reverse-return:hover {
+    color: var(--bgc-color);
+}
+
+/* BACKGROUND CENTER TO EDGES HORIZONTAL */
+.workspace .link-stage .background-center-to-edges-horizontal {
+    z-index: 0;
+    transition: color .3s;
+} 
+.workspace .link-stage .background-center-to-edges-horizontal::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--main-color);
+    transform: scaleX(0);
+    transition: transform .3s;
+}
+.workspace .link-stage .background-center-to-edges-horizontal:hover::before {
+    transform: scaleX(1);
+}
+.workspace .link-stage .background-center-to-edges-horizontal:hover {
+    color: var(--bgc-color);
+}
+
+/* BACKGROUND CENTER TO EDGES HORIZONTAL REVERSE RETURN */
+.workspace .link-stage .background-center-to-edges-horizontal-reverse-return {
+    z-index: 0;
+    transition: color .3s;
+} 
+.workspace .link-stage .background-center-to-edges-horizontal-reverse-return::before,
+.workspace .link-stage .background-center-to-edges-horizontal-reverse-return::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 51%;
+    background-color: var(--main-color);
+    transform: scaleX(0);
+    transition: transform .3s;
+} 
+.workspace .link-stage .background-center-to-edges-horizontal-reverse-return::before {
+    left: 0;
+    transform-origin: left;
+}
+.workspace .link-stage .background-center-to-edges-horizontal-reverse-return::after {
+    right: 0;
+    transform-origin: right;
+}
+.workspace .link-stage .background-center-to-edges-horizontal-reverse-return:hover::before {
+    transform: scaleX(1);
+    transform-origin: right;
+} 
+.workspace .link-stage .background-center-to-edges-horizontal-reverse-return:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.workspace .link-stage .background-center-to-edges-horizontal-reverse-return:hover {
     color: var(--bgc-color);
 }
 
@@ -325,12 +439,37 @@
     color: var(--bgc-color);
 }
 
-/* BACKGROUND FIFTH */
-.workspace .link-stage .background-center-to-edges-horizontal {
+/* BACKGROUND TOP TO BOTTOM */
+.workspace .link-stage .background-top-to-bottom {
     z-index: 0;
     transition: color .3s;
-} 
-.workspace .link-stage .background-center-to-edges-horizontal::before {
+}
+.workspace .link-stage .background-top-to-bottom::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--main-color);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .3s;
+}
+.workspace .link-stage .background-top-to-bottom:hover::before {
+    transform: scaleY(1);
+}
+.workspace .link-stage .background-top-to-bottom:hover {
+    color: var(--bgc-color);
+}
+
+/* BACKGROUND TOP TO BOTTOM REVERSE RETURN */
+.workspace .link-stage .background-top-to-bottom-reverse-return {
+    z-index: 0;
+    transition: color .3s;
+}
+.workspace .link-stage .background-top-to-bottom-reverse-return::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -339,17 +478,19 @@
     height: 100%;
     width: 100%;
     background-color: var(--main-color);
-    transform: scaleX(0);
+    transform: scaleY(0);
+    transform-origin: bottom;
     transition: transform .3s;
-}
-.workspace .link-stage .background-center-to-edges-horizontal:hover::before {
-    transform: scaleX(1);
-}
-.workspace .link-stage .background-center-to-edges-horizontal:hover {
+} 
+.workspace .link-stage .background-top-to-bottom-reverse-return:hover::before {
+    transform-origin: top;
+    transform: scaleY(1);
+} 
+.workspace .link-stage .background-top-to-bottom-reverse-return:hover {
     color: var(--bgc-color);
 }
 
-/* BACKGROUND SIXTH */
+/* BACKGROUND LEFT TO RIGHT */
 .workspace .link-stage .background-left-to-right {
     z-index: 0;
     transition: color .3s;
@@ -374,7 +515,7 @@
     color: var(--bgc-color);
 }
 
-/* BACKGROUND SEVENTH */
+/* BACKGROUND LEFT TO RIGHT REVERSE RETURN */
 .workspace .link-stage .background-left-to-right-reverse-return {
     z-index: 0;
     transition: color .3s;
@@ -397,5 +538,56 @@
     transform-origin: left;
 } 
 .workspace .link-stage .background-left-to-right-reverse-return:hover {
+    color: var(--bgc-color);
+}
+
+/* BACKGROUND RIGHT TO LEFT */
+.workspace .link-stage .background-right-to-left {
+    z-index: 0;
+    transition: color .3s;
+} 
+.workspace .link-stage .background-right-to-left::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--main-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .3s;
+}
+.workspace .link-stage .background-right-to-left:hover::before {
+    transform: scaleX(1);
+}
+.workspace .link-stage .background-right-to-left:hover {
+    color: var(--bgc-color);
+}
+
+/* BACKGROUND RIGHT TO LEFT REVERSE RETURN */
+.workspace .link-stage .background-right-to-left-reverse-return {
+    z-index: 0;
+    transition: color .3s;
+} 
+.workspace .link-stage .background-right-to-left-reverse-return::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--main-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s;
+}
+.workspace .link-stage .background-right-to-left-reverse-return:hover::before {
+    transform: scaleX(1);
+    transform-origin: right;
+} 
+.workspace .link-stage .background-right-to-left-reverse-return:hover {
     color: var(--bgc-color);
 }

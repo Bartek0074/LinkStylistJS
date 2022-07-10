@@ -171,6 +171,33 @@ const actualizeCode = () => {
 }` 
             break;
 
+        case 'underline-scaling-height':
+            codeCss.value = `.underline-scaling-height {
+    position: relative;
+    color: ${fontColorInputText.value};
+    font-family: ${fontFamilyInput.value};
+    font-size: ${fontSizeInput.value}px;
+    font-weight: ${root.style.getPropertyValue('--font-weight')};
+    font-style: ${root.style.getPropertyValue('--font-style')};
+    text-decoration: none;
+    cursor: pointer;
+}
+.underline-scaling-height::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: ${underlineHeightInput.value}px;
+    background-color: ${mainColorInputText.value};
+    transform: scaleY(0);
+    transition: transform .3s;
+}  
+.underline-scaling-height:before {
+    transform: scaleY(1);
+}` 
+            break;
+
         case 'underline-center-to-edges':
             codeCss.value = `.underline-center-to-edges {
     position: relative;
@@ -480,6 +507,130 @@ const actualizeCode = () => {
 }` 
             break;
      
+        case 'background-center-to-edges-vertical-reverse-return':
+            codeCss.value = `.background-center-to-edges-vertical-reverse-return {
+    position: relative;
+    z-index: 0;
+    color: ${fontColorInputText.value};
+    font-family: ${fontFamilyInput.value};
+    font-size: ${fontSizeInput.value}px;
+    font-weight: ${root.style.getPropertyValue('--font-weight')};
+    font-style: ${root.style.getPropertyValue('--font-style')};
+    text-decoration: none;
+    cursor: pointer;
+    transition: color .3s;
+}
+.background-center-to-edges-vertical-reverse-return::before,
+background-center-to-edges-vertical-reverse-return::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    background-color: ${mainColorInputText.value};
+    transform: scaleY(0);
+    transition: transform .3s;
+} 
+.workspace .link-stage .background-center-to-edges-vertical-reverse-return::before {
+    bottom: 0;
+    transform-origin: bottom;
+}
+.workspace .link-stage .background-center-to-edges-vertical-reverse-return::after {
+    top: 0;
+    transform-origin: top;
+}
+.workspace .link-stage .background-center-to-edges-vertical-reverse-return:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
+} 
+.workspace .link-stage .background-center-to-edges-vertical-reverse-return:hover::after {
+    transform: scaleY(1);
+    transform-origin: bottom;
+}
+.background-center-to-edges-vertical-reverse-return:hover {
+    color: ${bgcInputText.value};
+}` 
+            break;
+
+        case 'background-center-to-edges-horizontal':
+            codeCss.value = `.background-center-to-edges-horizontal {
+    position: relative;
+    z-index: 0;
+    font-family: ${fontFamilyInput.value};
+    font-size: ${fontSizeInput.value}px;
+    font-weight: ${root.style.getPropertyValue('--font-weight')};
+    font-style: ${root.style.getPropertyValue('--font-style')};
+    text-decoration: none;
+    color: ${fontColorInputText.value};
+    cursor: pointer;
+    transition: color .3s;
+}
+.background-center-to-edges-horizontal::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: ${mainColorInputText.value};
+    transform: scaleX(0);
+    transition: transform .3s;
+}
+.background-center-to-edges-horizontal:hover::before {
+    transform: scaleX(1);
+}
+.background-center-to-edges-horizontal:hover {
+    color: ${bgcInputText.value};
+}` 
+            break;
+
+        case 'background-center-to-edges-horizontal-reverse-return':
+            codeCss.value = `.background-center-to-edges-horizontal-reverse-return {
+    position: relative;
+    z-index: 0;
+    color: ${fontColorInputText.value};
+    font-family: ${fontFamilyInput.value};
+    font-size: ${fontSizeInput.value}px;
+    font-weight: ${root.style.getPropertyValue('--font-weight')};
+    font-style: ${root.style.getPropertyValue('--font-style')};
+    text-decoration: none;
+    cursor: pointer;
+    transition: color .3s;
+}
+.background-center-to-edges-horizontal-reverse-return::before,
+background-center-to-edges-horizontal-reverse-return::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 51%;
+    background-color: ${mainColorInputText.value};
+    transform: scaleX(0);
+    transition: transform .3s;
+} 
+.workspace .link-stage .background-center-to-edges-horizontal-reverse-return::before {
+    left: 0;
+    transform-origin: left;
+}
+.workspace .link-stage .background-center-to-edges-horizontal-reverse-return::after {
+    right: 0;
+    transform-origin: right;
+}
+.workspace .link-stage .background-center-to-edges-horizontal-reverse-return:hover::before {
+    transform: scaleX(1);
+    transform-origin: right;
+} 
+.workspace .link-stage .background-center-to-edges-horizontal-reverse-return:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.background-center-to-edges-horizontal-reverse-return:hover {
+    color: ${bgcInputText.value};
+}` 
+            break;
+
         case 'background-bottom-to-top':
             codeCss.value = `.background-bottom-to-top {
     position: relative;
@@ -549,8 +700,8 @@ const actualizeCode = () => {
 }` 
             break;
 
-        case 'background-center-to-edges-horizontal':
-            codeCss.value = `.background-center-to-edges-horizontal {
+        case 'background-top-to-bottom':
+            codeCss.value = `.background-top-to-bottom {
     position: relative;
     z-index: 0;
     font-family: ${fontFamilyInput.value};
@@ -562,7 +713,41 @@ const actualizeCode = () => {
     cursor: pointer;
     transition: color .3s;
 }
-.background-center-to-edges-horizontal::before {
+.background-top-to-bottom::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: ${mainColorInputText.value};
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .3s;
+}
+.background-top-to-bottom:hover::before {
+    transform: scaleY(1);
+}
+.background-top-to-bottom:hover {
+    color: ${bgcInputText.value};
+}` 
+            break;
+
+        case 'background-top-to-bottom-reverse-return':
+            codeCss.value = `.background-top-to-bottom-reverse-return {
+    position: relative;
+    z-index: 0;
+    font-family: ${fontFamilyInput.value};
+    font-size: ${fontSizeInput.value}px;
+    font-weight: ${root.style.getPropertyValue('--font-weight')};
+    font-style: ${root.style.getPropertyValue('--font-style')};
+    text-decoration: none;
+    color: ${fontColorInputText.value};
+    cursor: pointer;
+    transition: color .3s;
+}
+.background-top-to-bottom-reverse-return::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -571,13 +756,15 @@ const actualizeCode = () => {
     height: 100%;
     width: 100%;
     background-color: ${mainColorInputText.value};
-    transform: scaleX(0);
+    transform: scaleY(0);
+    transform-origin: bottom;
     transition: transform .3s;
-}
-.background-center-to-edges-horizontal:hover::before {
-    transform: scaleX(1);
-}
-.background-center-to-edges-horizontal:hover {
+} 
+.background-top-to-bottom-reverse-return:hover::before {
+    transform-origin: top;
+    transform: scaleY(1);
+} 
+.background-top-to-bottom-reverse-return:hover {
     color: ${bgcInputText.value};
 }` 
             break;
@@ -652,14 +839,84 @@ const actualizeCode = () => {
 }` 
             break;
       
+        case 'background-right-to-left':
+            codeCss.value = `.background-right-to-left {
+    position: relative;
+    z-index: 0;
+    font-family: ${fontFamilyInput.value};
+    font-size: ${fontSizeInput.value}px;
+    font-weight: ${root.style.getPropertyValue('--font-weight')};
+    font-style: ${root.style.getPropertyValue('--font-style')};
+    text-decoration: none;
+    color: ${fontColorInputText.value};
+    cursor: pointer;
+    transition: color .3s;
+}
+.background-right-to-left::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: ${mainColorInputText.value};
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .3s;
+}
+.background-right-to-left:hover::before {
+    transform: scaleX(1);
+}
+.background-right-to-left:hover {
+    color: ${bgcInputText.value};
+}` 
+            break;
+
+        case 'background-right-to-left-reverse-return':
+            codeCss.value = `.background-right-to-left-reverse-return {
+    position: relative;
+    z-index: 0;
+    padding: 10px 20px;
+    font-family: ${fontFamilyInput.value};
+    font-size: ${fontSizeInput.value}px;
+    font-weight: ${root.style.getPropertyValue('--font-weight')};
+    font-style: ${root.style.getPropertyValue('--font-style')};
+    text-decoration: none;
+    color: ${fontColorInputText.value};
+    cursor: pointer;
+    transition: color .3s;
+}
+.background-right-to-left-reverse-return::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: ${mainColorInputText.value};
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s;
+}
+.background-right-to-left-reverse-return:hover::before {
+    transform: scaleX(1);
+    transform-origin: right;
+} 
+.background-right-to-left-reverse-return:hover {
+    color: ${bgcInputText.value};
+}` 
+            break;
+
         default:
-            console.log('not found class')
+            console.log('class not found')
       }
 }
 
 const copyToClipboard = (code) => {
-        code.select()
-        document.execCommand('copy')
+    code.select()
+    document.execCommand('copy')
 }
 
 // TEXT VALUE OPTION
