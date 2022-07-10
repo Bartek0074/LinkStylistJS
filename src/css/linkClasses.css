@@ -705,3 +705,127 @@
 .workspace .link-stage .square-effect-symetrical:hover::after{
     transform: scaleX(1);
 }
+
+/* SQUARE EFFECT SIMULATNEOUS */
+.workspace .link-stage .square-effect-simultaneous-wrapper{
+    position: relative;
+}
+.workspace .link-stage .square-effect-simultaneous-wrapper::before,
+.workspace .link-stage .square-effect-simultaneous-wrapper::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    background-color: var(--main-color);
+    transform: scaleY(0);
+    transition: transform .3s;
+}
+.workspace .link-stage .square-effect-simultaneous-wrapper::before{
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom left;
+}
+.workspace .link-stage .square-effect-simultaneous-wrapper::after{
+    top: 0;
+    right: 0;
+    transform-origin: top right;
+}
+.workspace .link-stage .square-effect-simultaneous-wrapper:hover::before,
+.workspace .link-stage .square-effect-simultaneous-wrapper:hover::after{
+    transform: scaleY(1);
+}
+
+.workspace .link-stage .square-effect-simultaneous{
+    padding: 3px;
+}
+.workspace .link-stage .square-effect-simultaneous::before,
+.workspace .link-stage .square-effect-simultaneous::after{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: var(--main-color);
+    transform: scaleX(0);
+    transition: transform .3s;
+}
+.workspace .link-stage .square-effect-simultaneous::before{
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom right;
+}
+.workspace .link-stage .square-effect-simultaneous::after{
+    top: 0;
+    right: 0;
+    transform-origin: top left;
+}
+.workspace .link-stage .square-effect-simultaneous:hover::before,
+.workspace .link-stage .square-effect-simultaneous:hover::after{
+    transform: scaleX(1);
+}
+
+/* SQUARE EFFECT SIDE BY SIDE */
+.workspace .link-stage .square-effect-side-by-side-wrapper{
+    position: relative;
+}
+.workspace .link-stage .square-effect-side-by-side-wrapper::before,
+.workspace .link-stage .square-effect-side-by-side-wrapper::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    background-color: var(--main-color);
+    transform: scaleY(0);
+}
+.workspace .link-stage .square-effect-side-by-side-wrapper::before{
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom left;
+    transition: transform .2s;
+}
+.workspace .link-stage .square-effect-side-by-side-wrapper::after{
+    top: 0;
+    right: 0;
+    transform-origin: top right;
+    transition: transform .2s .2s;
+}
+.workspace .link-stage .square-effect-side-by-side-wrapper:hover::before{
+    transform: scaleY(1);
+    transition: transform .2s .3s;
+}
+.workspace .link-stage .square-effect-side-by-side-wrapper:hover::after{
+    transform: scaleY(1);
+    transition: transform .2s .1s;
+}
+
+.workspace .link-stage .square-effect-side-by-side{
+    padding: 3px;
+}
+.workspace .link-stage .square-effect-side-by-side::before,
+.workspace .link-stage .square-effect-side-by-side::after{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: var(--main-color);
+    transform: scaleX(0);
+}
+.workspace .link-stage .square-effect-side-by-side::before{
+    bottom: 0;
+    right: 0;
+    transform-origin: bottom right;
+    transition: transform .2s .1s;
+}
+.workspace .link-stage .square-effect-side-by-side::after{
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+    transition: transform .2s .3s;
+}
+.workspace .link-stage .square-effect-side-by-side:hover::before{
+    transform: scaleX(1);
+    transition: transform .2s .2s;
+}
+.workspace .link-stage .square-effect-side-by-side:hover::after{
+    transform: scaleX(1);
+        transition: transform .2s;
+}
