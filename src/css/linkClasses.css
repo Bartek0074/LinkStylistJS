@@ -38,11 +38,17 @@
 /*  */
     
 /* SIMPLE HOVER */
+.workspace .link-stage .simple-hover {
+    transition: color .3s;
+}
 .workspace .link-stage .simple-hover:hover {
     color: var(--main-color);
 }
 
 /* SIMPLE HOVER WITH UNDERLINE */
+.workspace .link-stage .simple-hover-with-underline {
+    transition: color .3s, text-decoration .3s
+}
 .workspace .link-stage .simple-hover-with-underline:hover {
     color: var(--main-color);
     text-decoration: underline;
@@ -244,12 +250,12 @@
     color: var(--bgc-color);
 }
 
-/* BACKGROUND SECOND */
-.workspace .link-stage .background__second {
+/* BACKGROUND CENTER TO EDGES VERTICA; */
+.workspace .link-stage .background-center-to-edges-vertical {
     z-index: 0;
     transition: color .3s;
 } 
-.workspace .link-stage .background__second::before {
+.workspace .link-stage .background-center-to-edges-vertical::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -261,19 +267,19 @@
     transform: scaleY(0);
     transition: transform .3s;
 } 
-.workspace .link-stage .background__second:hover::before {
+.workspace .link-stage .background-center-to-edges-vertical:hover::before {
     transform: scaleY(1);
 }
-.workspace .link-stage .background__second:hover {
+.workspace .link-stage .background-center-to-edges-vertical:hover {
     color: var(--bgc-color);
 }
 
-/* BACKGROUND THIRD */
-.workspace .link-stage .background__third {
+/* BACKGROUND BOTTOM TO TOP */
+.workspace .link-stage .background-bottom-to-top {
     z-index: 0;
     transition: color .3s;
 }
-.workspace .link-stage .background__third::before {
+.workspace .link-stage .background-bottom-to-top::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -286,19 +292,19 @@
     transform-origin: bottom;
     transition: transform .3s;
 }
-.workspace .link-stage .background__third:hover::before {
+.workspace .link-stage .background-bottom-to-top:hover::before {
     transform: scaleY(1);
 }
-.workspace .link-stage .background__third:hover {
+.workspace .link-stage .background-bottom-to-top:hover {
     color: var(--bgc-color);
 }
  
-/* BACKGROUND FOURTH */
-.workspace .link-stage .background__fourth {
+/* BACKGROUND BOTTOM TO TOP REVERSE RETURN */
+.workspace .link-stage .background-bottom-to-top-reverse-return {
     z-index: 0;
     transition: color .3s;
 }
-.workspace .link-stage .background__fourth::before {
+.workspace .link-stage .background-bottom-to-top-reverse-return::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -311,20 +317,20 @@
     transform-origin: top;
     transition: transform .3s;
 } 
-.workspace .link-stage .background__fourth:hover::before {
+.workspace .link-stage .background-bottom-to-top-reverse-return:hover::before {
     transform-origin: bottom;
     transform: scaleY(1);
 } 
-.workspace .link-stage .background__fourth:hover {
+.workspace .link-stage .background-bottom-to-top-reverse-return:hover {
     color: var(--bgc-color);
 }
 
 /* BACKGROUND FIFTH */
-.workspace .link-stage .background__fifth {
+.workspace .link-stage .background-center-to-edges-horizontal {
     z-index: 0;
     transition: color .3s;
 } 
-.workspace .link-stage .background__fifth::before {
+.workspace .link-stage .background-center-to-edges-horizontal::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -336,19 +342,19 @@
     transform: scaleX(0);
     transition: transform .3s;
 }
-.workspace .link-stage .background__fifth:hover::before {
+.workspace .link-stage .background-center-to-edges-horizontal:hover::before {
     transform: scaleX(1);
 }
-.workspace .link-stage .background__fifth:hover {
+.workspace .link-stage .background-center-to-edges-horizontal:hover {
     color: var(--bgc-color);
 }
 
 /* BACKGROUND SIXTH */
-.workspace .link-stage .background__sixth {
+.workspace .link-stage .background-left-to-right {
     z-index: 0;
     transition: color .3s;
 } 
-.workspace .link-stage .background__sixth::before {
+.workspace .link-stage .background-left-to-right::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -361,19 +367,19 @@
     transform-origin: left;
     transition: transform .3s;
 }
-.workspace .link-stage .background__sixth:hover::before {
+.workspace .link-stage .background-left-to-right:hover::before {
     transform: scaleX(1);
 }
-.workspace .link-stage .background__sixth:hover {
+.workspace .link-stage .background-left-to-right:hover {
     color: var(--bgc-color);
 }
 
 /* BACKGROUND SEVENTH */
-.workspace .link-stage .background__seventh {
+.workspace .link-stage .background-left-to-right-reverse-return {
     z-index: 0;
     transition: color .3s;
 } 
-.workspace .link-stage .background__seventh::before {
+.workspace .link-stage .background-left-to-right-reverse-return::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -386,10 +392,10 @@
     transform-origin: right;
     transition: transform .3s;
 }
-.workspace .link-stage .background__seventh:hover::before {
+.workspace .link-stage .background-left-to-right-reverse-return:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 } 
-.workspace .link-stage .background__seventh:hover {
+.workspace .link-stage .background-left-to-right-reverse-return:hover {
     color: var(--bgc-color);
 }

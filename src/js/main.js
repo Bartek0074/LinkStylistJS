@@ -429,7 +429,6 @@ const actualizeCode = () => {
             break;
 
 
-            // TO UPDATE: CLASSES NAME
         case 'background-hover':
             codeCss.value = `.background-hover {
     position: relative;
@@ -448,8 +447,8 @@ const actualizeCode = () => {
 }` 
             break;
 
-        case 'background__second':
-            codeCss.value = `.background__second {
+        case 'background-center-to-edges-vertical':
+            codeCss.value = `.background-center-to-edges-vertical {
     position: relative;
     z-index: 0;
     color: ${fontColorInputText.value};
@@ -461,7 +460,7 @@ const actualizeCode = () => {
     cursor: pointer;
     transition: color .3s;
 }
-.background__second::before {
+.background-center-to-edges-vertical::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -473,16 +472,16 @@ const actualizeCode = () => {
     transform: scaleY(0);
     transition: transform .3s;
 } 
-.background__second:hover::before {
+.background-center-to-edges-vertical:hover::before {
     transform: scaleY(1);
 }
-.background__second:hover {
+.background-center-to-edges-vertical:hover {
     color: ${bgcInputText.value};
 }` 
             break;
      
-        case 'background__third':
-            codeCss.value = `.background__third {
+        case 'background-bottom-to-top':
+            codeCss.value = `.background-bottom-to-top {
     position: relative;
     z-index: 0;
     font-family: ${fontFamilyInput.value};
@@ -494,7 +493,7 @@ const actualizeCode = () => {
     cursor: pointer;
     transition: color .3s;
 }
-.background__third::before {
+.background-bottom-to-top::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -507,16 +506,16 @@ const actualizeCode = () => {
     transform-origin: bottom;
     transition: transform .3s;
 }
-.background__third:hover::before {
+.background-bottom-to-top:hover::before {
     transform: scaleY(1);
 }
-.background__third:hover {
+.background-bottom-to-top:hover {
     color: ${bgcInputText.value};
 }` 
             break;
        
-        case 'background__fourth':
-            codeCss.value = `.background__fourth {
+        case 'background-bottom-to-top-reverse-return':
+            codeCss.value = `.background-bottom-to-top-reverse-return {
     position: relative;
     z-index: 0;
     font-family: ${fontFamilyInput.value};
@@ -528,7 +527,7 @@ const actualizeCode = () => {
     cursor: pointer;
     transition: color .3s;
 }
-.background__fourth::before {
+.background-bottom-to-top-reverse-return::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -541,17 +540,17 @@ const actualizeCode = () => {
     transform-origin: top;
     transition: transform .3s;
 } 
-.background__fourth:hover::before {
+.background-bottom-to-top-reverse-return:hover::before {
     transform-origin: bottom;
     transform: scaleY(1);
 } 
-.background__fourth:hover {
+.background-bottom-to-top-reverse-return:hover {
     color: ${bgcInputText.value};
 }` 
             break;
 
-        case 'background__fifth':
-            codeCss.value = `.background__fifth {
+        case 'background-center-to-edges-horizontal':
+            codeCss.value = `.background-center-to-edges-horizontal {
     position: relative;
     z-index: 0;
     font-family: ${fontFamilyInput.value};
@@ -563,7 +562,7 @@ const actualizeCode = () => {
     cursor: pointer;
     transition: color .3s;
 }
-.background__fifth::before {
+.background-center-to-edges-horizontal::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -575,16 +574,16 @@ const actualizeCode = () => {
     transform: scaleX(0);
     transition: transform .3s;
 }
-.background__fifth:hover::before {
+.background-center-to-edges-horizontal:hover::before {
     transform: scaleX(1);
 }
-.background__fifth:hover {
+.background-center-to-edges-horizontal:hover {
     color: ${bgcInputText.value};
 }` 
             break;
 
-        case 'background__sixth':
-            codeCss.value = `.background__sixth {
+        case 'background-left-to-right':
+            codeCss.value = `.background-left-to-right {
     position: relative;
     z-index: 0;
     font-family: ${fontFamilyInput.value};
@@ -596,7 +595,7 @@ const actualizeCode = () => {
     cursor: pointer;
     transition: color .3s;
 }
-.background__sixth::before {
+.background-left-to-right::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -609,16 +608,16 @@ const actualizeCode = () => {
     transform-origin: left;
     transition: transform .3s;
 }
-.background__sixth:hover::before {
+.background-left-to-right:hover::before {
     transform: scaleX(1);
 }
-.background__sixth:hover {
+.background-left-to-right:hover {
     color: ${bgcInputText.value};
 }` 
             break;
 
-        case 'background__seventh':
-            codeCss.value = `.background__seventh {
+        case 'background-left-to-right-reverse-return':
+            codeCss.value = `.background-left-to-right-reverse-return {
     position: relative;
     z-index: 0;
     padding: 10px 20px;
@@ -631,7 +630,7 @@ const actualizeCode = () => {
     cursor: pointer;
     transition: color .3s;
 }
-.background__seventh::before {
+.background-left-to-right-reverse-return::before {
     content: '';
     z-index: -1;
     position: absolute;
@@ -644,11 +643,11 @@ const actualizeCode = () => {
     transform-origin: right;
     transition: transform .3s;
 }
-.background__seventh:hover::before {
+.background-left-to-right-reverse-return:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 } 
-.background__seventh:hover {
+.background-left-to-right-reverse-return:hover {
     color: ${bgcInputText.value};
 }` 
             break;
