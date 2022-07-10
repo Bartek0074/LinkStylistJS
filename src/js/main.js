@@ -12,6 +12,7 @@ const buttonCopyHtml = document.querySelector('.button-copy-html')
 const buttonCopyCss = document.querySelector('.button-copy-css')
 const codeCss = document.querySelector('.css-code')
 const stageLink = document.querySelector('.link')
+const stageLinkWrapper = document.querySelector('#link-wrapper')
 const root = document.querySelector(':root')
 const textInput = document.querySelector('#text')
 const fontSizeInput = document.querySelector('#font-size')
@@ -55,6 +56,13 @@ const linkHandle = (e) =>{
             stageLink.removeAttribute('class')
             // ADDING LINK VARIATION BOX's FIRST VARIATION TO STAGE LINK
             stageLink.classList.add(linksVariationBox[i].firstElementChild.classList[1])
+
+            // REMOVING ALL CLASSES FROM STAGE LINK WRAPPER
+            stageLinkWrapper.removeAttribute('class')
+            // ADDING LINK VARIATION'S CLASS TO STAGE LINK'S SPAN
+            if(linksVariationBox[i].firstElementChild.classList.length === 4) {
+                stageLinkWrapper.classList.add(linksVariationBox[i].firstElementChild.classList[2])
+            }
         }
     }
 }
@@ -72,6 +80,13 @@ const linkVariationHandle = (e) => {
     stageLink.removeAttribute('class')
     // ADDING LINK VARIATION's CLASS TO STAGE LINK
     stageLink.classList.add(e.target.classList[1])
+
+    // REMOVING ALL CLASSES FROM STAGE LINK WRAPPER
+    stageLinkWrapper.removeAttribute('class')
+    // ADDING LINK VARIATION'S CLASS TO STAGE LINK'S SPAN
+    if(e.target.classList.length === 4) {
+        stageLinkWrapper.classList.add(e.target.classList[2])
+    }
 }
 
 const openOptions = () => {
