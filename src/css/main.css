@@ -39,6 +39,7 @@ body {
 }
 
 .menu .link-type-box .link-type {
+  position: relative;
   margin: 0.5em .25em;
   padding: .75em 1.5em;
   background-color: #222;
@@ -56,8 +57,21 @@ body {
 .menu .link-type-box .link-type--active {
   background-color: #1363df;
 }
-.menu .link-type-box .link-type:hover {
-  background-color: #444;
+.menu .link-type-box .link-type::before{
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 0%;
+  width: 0%;
+  border-radius: 20px;
+  background-color: #ffffff15;
+  transition: height .3s cubic-bezier(0.39, 0.575, 0.565, 1), width .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.menu .link-type-box .link-type:hover::before{
+  height: 100%;
+  width: 100%;
 }
 
 .menu .link-variation-boxes {
