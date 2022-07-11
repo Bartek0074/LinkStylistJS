@@ -118,10 +118,14 @@ const actualizeCode = () => {
             linkClass = link.classList[1]
         }
     })
-    codeHtml.value = `<a class="${linkClass}">${textInput.value}</a>`
+    if(stageLinkWrapper.classList.length === 0){
+        codeHtml.value = `<a class="${linkClass}">${textInput.value}</a>`
+    }
+    else{
+        codeHtml.value = `<span class="${stageLinkWrapper.classList[0]}"><a class="${linkClass}">${textInput.value}</a></span>`
+    }
     
     // CSS
-
 
     // RESET FONT-WEIGHT AND FONT-STYLE VALUES
     if (root.style.getPropertyValue('--font-weight') === ""){
