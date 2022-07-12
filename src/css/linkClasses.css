@@ -612,11 +612,11 @@
 }
 .workspace .link-stage .square-effect-center-to-edges-wrapper::before{
     bottom: 0;
-    right: 0px;
+    right: 0;
 }
 .workspace .link-stage .square-effect-center-to-edges-wrapper::after{
     top: 0;
-    left: 0px;
+    left: 0;
 }
 .workspace .link-stage .square-effect-center-to-edges-wrapper:hover::before,
 .workspace .link-stage .square-effect-center-to-edges-wrapper:hover::after{
@@ -638,11 +638,11 @@
 }
 .workspace .link-stage .square-effect-center-to-edges::before{
     bottom: 0;
-    right: 0px;
+    right: 0;
 }
 .workspace .link-stage .square-effect-center-to-edges::after{
     top: 0;
-    left: 0px;
+    left: 0;
 }
 .workspace .link-stage .square-effect-center-to-edges:hover::before,
 .workspace .link-stage .square-effect-center-to-edges:hover::after{

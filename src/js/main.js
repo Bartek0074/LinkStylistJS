@@ -928,6 +928,69 @@ background-center-to-edges-horizontal-reverse-return::after {
 }` 
             break;
 
+
+        case 'square-effect-center-to-edges':
+    codeCss.value = `.square-effect-center-to-edges-wrapper{
+    position: relative;
+    font-family: ${fontFamilyInput.value};
+    font-size: ${fontSizeInput.value}px;
+    font-weight: ${root.style.getPropertyValue('--font-weight')};
+    font-style: ${root.style.getPropertyValue('--font-style')};
+    text-decoration: none;
+    color: ${fontColorInputText.value};
+    cursor: pointer;
+}
+.square-effect-center-to-edges-wrapper::before,
+.square-effect-center-to-edges-wrapper::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    background-color: ${mainColorInputText.value};
+    transform: scaleY(0);
+    transition: transform .3s;
+}
+.square-effect-center-to-edges-wrapper::before{
+    bottom: 0;
+    right: 0;
+}
+.square-effect-center-to-edges-wrapper::after{
+    top: 0;
+    left: 0;
+}
+.square-effect-center-to-edges-wrapper:hover::before,
+.square-effect-center-to-edges-wrapper:hover::after{
+    transform: scaleY(1);
+}
+.square-effect-center-to-edges {
+    position: relative;
+    z-index: 0;
+    padding: 3px;
+}
+.square-effect-center-to-edges::before,
+.square-effect-center-to-edges::after{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: ${mainColorInputText.value};
+    transform: scaleX(0);
+    transition: transform .3s;
+}
+.square-effect-center-to-edges::before{
+    bottom: 0;
+    right: 0;
+}
+.square-effect-center-to-edges::after{
+    top: 0;
+    left: 0;
+}
+.square-effect-center-to-edges:hover::before,
+.square-effect-center-to-edges:hover::after{
+    transform: scaleX(1);
+}` 
+            break;
+            
         default:
             console.log('class not found')
       }
