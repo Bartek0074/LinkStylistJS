@@ -1202,6 +1202,7 @@ background-center-to-edges-horizontal-reverse-return::after {
       }
 }
 
+// COPYING CODE TO CLIPBOARD
 const copyToClipboard = (code) => {
     code.select()
     document.execCommand('copy')
