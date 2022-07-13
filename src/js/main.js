@@ -964,7 +964,6 @@ background-center-to-edges-horizontal-reverse-return::after {
 }
 .square-effect-center-to-edges {
     position: relative;
-    z-index: 0;
     padding: 3px;
 }
 .square-effect-center-to-edges::before,
@@ -988,6 +987,213 @@ background-center-to-edges-horizontal-reverse-return::after {
 .square-effect-center-to-edges:hover::before,
 .square-effect-center-to-edges:hover::after{
     transform: scaleX(1);
+}` 
+            break;
+            
+        case 'square-effect-symetrical':
+    codeCss.value = `.square-effect-symetrical-wrapper{
+    position: relative;
+    font-family: ${fontFamilyInput.value};
+    font-size: ${fontSizeInput.value}px;
+    font-weight: ${root.style.getPropertyValue('--font-weight')};
+    font-style: ${root.style.getPropertyValue('--font-style')};
+    text-decoration: none;
+    color: ${fontColorInputText.value};
+    cursor: pointer;
+}
+.square-effect-symetrical-wrapper::before,
+.square-effect-symetrical-wrapper::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    background-color: ${mainColorInputText.value};
+    transform: scaleY(0);
+    transition: transform .3s;
+}
+.square-effect-symetrical-wrapper::before{
+    bottom: 0;
+    right: 0;
+    transform-origin: bottom right;
+}
+.square-effect-symetrical-wrapper::after{
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+}
+.square-effect-symetrical-wrapper:hover::before,
+.square-effect-symetrical-wrapper:hover::after{
+    transform: scaleY(1);
+}
+.square-effect-symetrical {
+    position: relative;
+    padding: 3px;
+}
+.square-effect-symetrical::before,
+.square-effect-symetrical::after{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: ${mainColorInputText.value};
+    transform: scaleX(0);
+    transition: transform .3s;
+}
+.square-effect-symetrical::before{
+    bottom: 0;
+    right: 0;
+    transform-origin: bottom right;
+}
+.square-effect-symetrical::after{
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+}
+.square-effect-symetrical:hover::before,
+.square-effect-symetrical:hover::after{
+    transform: scaleX(1);
+}` 
+            break;
+
+        case 'square-effect-simultaneous':
+    codeCss.value = `.square-effect-simultaneous-wrapper{
+    position: relative;
+    font-family: ${fontFamilyInput.value};
+    font-size: ${fontSizeInput.value}px;
+    font-weight: ${root.style.getPropertyValue('--font-weight')};
+    font-style: ${root.style.getPropertyValue('--font-style')};
+    text-decoration: none;
+    color: ${fontColorInputText.value};
+    cursor: pointer;
+}
+.square-effect-simultaneous-wrapper::before,
+.square-effect-simultaneous-wrapper::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    background-color: ${mainColorInputText.value};
+    transform: scaleY(0);
+    transition: transform .3s;
+}
+.square-effect-simultaneous-wrapper::before{
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom left;
+}
+.square-effect-simultaneous-wrapper::after{
+    top: 0;
+    right: 0;
+    transform-origin: top right;
+}
+.square-effect-simultaneous-wrapper:hover::before,
+.square-effect-simultaneous-wrapper:hover::after{
+    transform: scaleY(1);
+}
+.square-effect-simultaneous {
+    position: relative;
+    padding: 3px;
+}
+.square-effect-simultaneous::before,
+.square-effect-simultaneous::after{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: ${mainColorInputText.value};
+    transform: scaleX(0);
+    transition: transform .3s;
+}
+.square-effect-simultaneous::before{
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom right;
+}
+.square-effect-simultaneous::after{
+    top: 0;
+    right: 0;
+    transform-origin: top left;
+}
+.square-effect-simultaneous:hover::before,
+.square-effect-simultaneous:hover::after{
+    transform: scaleX(1);
+}` 
+            break;
+
+        case 'square-effect-side-by-side':
+    codeCss.value = `.square-effect-side-by-side-wrapper{
+    position: relative;
+    font-family: ${fontFamilyInput.value};
+    font-size: ${fontSizeInput.value}px;
+    font-weight: ${root.style.getPropertyValue('--font-weight')};
+    font-style: ${root.style.getPropertyValue('--font-style')};
+    text-decoration: none;
+    color: ${fontColorInputText.value};
+    cursor: pointer;
+}
+.square-effect-side-by-side-wrapper::before,
+.square-effect-side-by-side-wrapper::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    background-color: ${mainColorInputText.value};
+    transform: scaleY(0);
+    transition: transform .3s;
+}
+.square-effect-side-by-side-wrapper::before{
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom left;
+    transition: transform .2s;
+}
+.square-effect-side-by-side-wrapper::after{
+    top: 0;
+    right: 0;
+    transform-origin: top right;
+    transition: transform .2s .2s;
+}
+.square-effect-side-by-side-wrapper:hover::before{
+    transform: scaleY(1);
+    transition: transform .2s .3s;
+}
+.square-effect-side-by-side-wrapper:hover::after{
+    transform: scaleY(1);
+    transition: transform .2s .1s;
+}
+.square-effect-side-by-side {
+    position: relative;
+    padding: 3px;
+}
+.square-effect-side-by-side::before,
+.square-effect-side-by-side::after{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: ${mainColorInputText.value};
+    transform: scaleX(0);
+    transition: transform .3s;
+}
+.square-effect-side-by-side::before{
+    bottom: 0;
+    right: 0;
+    transform-origin: bottom right;
+    transition: transform .2s .1s;
+}
+.square-effect-side-by-side::after{
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+    transition: transform .2s .3s;
+}
+.square-effect-side-by-side:hover::before{
+    transform: scaleX(1);
+    transition: transform .2s .2s;
+}
+.square-effect-side-by-side:hover::after{
+    transform: scaleX(1);
+    transition: transform .2s;
 }` 
             break;
             

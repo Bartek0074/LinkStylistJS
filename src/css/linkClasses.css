@@ -665,12 +665,12 @@
 }
 .workspace .link-stage .square-effect-symetrical-wrapper::before{
     bottom: 0;
-    right: 0px;
+    right: 0;
     transform-origin: bottom right;
 }
 .workspace .link-stage .square-effect-symetrical-wrapper::after{
     top: 0;
-    left: 0px;
+    left: 0;
     transform-origin: top left;
 }
 .workspace .link-stage .square-effect-symetrical-wrapper:hover::before,
@@ -693,12 +693,12 @@
 }
 .workspace .link-stage .square-effect-symetrical::before{
     bottom: 0;
-    right: 0px;
+    right: 0;
     transform-origin: bottom right;
 }
 .workspace .link-stage .square-effect-symetrical::after{
     top: 0;
-    left: 0px;
+    left: 0;
     transform-origin: top left;
 }
 .workspace .link-stage .square-effect-symetrical:hover::before,
