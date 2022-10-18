@@ -10,3 +10,5 @@
 - CSS*
 - JavaScript
 - Gulp
+
+*At the beginning I was working with SASS, but I switched to CSS, because JavaScript doesn't see SASS variables.
