@@ -1,11 +1,15 @@
 # LinkStylistJS
 
-## Nice application where you can style your links.</br>You can generate and copy HTML and CSS code of styled link!</br>
+Nice application where you can style your links. You can generate and copy HTML and CSS code of styled link!
 
-### You can check this website <a href="https://bartek0074.github.io/LinkStylistJS/">here</a>
+## Demo
 
+Live Demo [here](https://bartek0074.github.io/LinkStylistJS/).
 
-⚙ Technology used:
+![linkstylist](https://user-images.githubusercontent.com/88652468/206926316-8b9e38f7-a52d-4dbf-91f3-7341032e97cb.gif)
+
+## Technologies
+
 - HTML
 - CSS*
 - JavaScript
