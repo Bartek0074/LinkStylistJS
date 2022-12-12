@@ -10,9 +10,10 @@ Live Demo [here](https://bartek0074.github.io/LinkStylistJS/).
 
 ## Technologies
 
-- HTML
-- CSS*
-- JavaScript
-- Gulp
+- HTML,
+- JavaScript,
+- CSS*,
+- RWD,
+- Gulp.
 
 *At the beginning I was working with SASS, but I switched to CSS, because JavaScript doesn't see SASS variables.
